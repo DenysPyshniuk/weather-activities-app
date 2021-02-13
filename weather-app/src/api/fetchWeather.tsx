@@ -11,6 +11,6 @@ export const fetchWeather = async (query: string) => {
       APPID: API_Key,
     },
   });
-
+  console.log(data);
   return data;
 };
