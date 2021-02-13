@@ -4,9 +4,10 @@ body {
   align-items: center;
 }
 div {
-  border: thick;
-  color: black;
+  border: thin;
+  border-color: rgba(0, 123, 255, 0.7);
   border-style: solid;
+  border-radius: 4px;
 }
 .main-group {
   display: flex;
