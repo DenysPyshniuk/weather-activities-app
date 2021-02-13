@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { fetchWeather } from "../api/fetchWeather";
 import "./day_weather.css";
 
@@ -11,10 +11,10 @@ const DayWeather = () => {
     },
     weather: [
       {
-        id: Number,
+        id: 1,
         main: String,
-        description: "description",
-        icon: String,
+        description: "Snow",
+        icon: "13d",
       },
     ],
     base: String,
@@ -28,13 +28,13 @@ const DayWeather = () => {
     sys: {
       type: 0,
       id: 0,
-      country: String,
+      country: "ca",
       sunrise: 0,
       sunset: 0,
     },
     timezone: 0,
     id: 0,
-    name: String,
+    name: "Vancouver",
     cod: 0,
   });
 
@@ -70,7 +70,7 @@ const DayWeather = () => {
             <img
               className="city-icon"
               src="{'https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png'}"
-              alt="{weather.weather[0].description}"
+              // alt="{weather.weather[0].description}"
             />
             <p>{weather.weather[0].description}</p>
           </div>
