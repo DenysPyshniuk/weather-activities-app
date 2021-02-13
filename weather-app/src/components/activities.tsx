@@ -19,9 +19,9 @@ const Activities = () => {
       </div>
       <div className='container'>
         <h4>Bored?</h4>
-        <div>
+        <div className='act-new'>
           Suggested Activity
-          <button className='button'>New Activity</button>
+          <button className='button'>New</button>
         </div>
       </div>
     </div>

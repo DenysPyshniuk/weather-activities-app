@@ -1,9 +1,8 @@
-body {
+#root {
   display: flex;
   flex-direction: column;
   align-items: center;
-} 
-
+}
 .container {
   border: thin;
   border-color: rgba(0, 123, 255, 0.7);
@@ -30,4 +29,9 @@ body {
 .button {
   height: 2em;
 
+}
+.act-new {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
