@@ -10,7 +10,7 @@ const Main = () => {
     <body>
       <Quotes />
       <div className='main-group'>
-        <div className='left-group'>
+        <div className='left-group container'>
           <Search />
           <DayWeather />
           <WeekWeather />

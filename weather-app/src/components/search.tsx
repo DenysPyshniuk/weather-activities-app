@@ -2,9 +2,11 @@
 
 const Search = () => {
   return (
-    <form action="Submit">
-      <input type="text" placeholder='City'/>
-    </form>
+    <div>
+      <form action="Submit">
+        <input type="text" placeholder='City'/>
+      </form>
+    </div>
   )
 }
 

@@ -2,7 +2,10 @@
 
 const Quotes = () => {
   return (
-    <p>I am a quote</p>
+    <div className='container quote'>
+      <p>I am a quote</p>
+      <button className='button'>New Quote</button>
+    </div>
   )
 }
 
