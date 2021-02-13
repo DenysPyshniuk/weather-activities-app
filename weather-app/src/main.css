@@ -1,0 +1,21 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+div {
+  border: thick;
+  color: black;
+  border-style: solid;
+}
+.main-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.left-group {
+  display: flex;
+  flex-direction: column;
+  padding: 5em;
+  justify-content: space-between;
+}
