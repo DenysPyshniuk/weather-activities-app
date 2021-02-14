@@ -3,6 +3,10 @@
   flex-direction: column;
   align-items: center;
 }
+body {
+  width: 100%;
+  height: 100vh;
+}
 .container {
   border: thin;
   border-color: rgba(0, 123, 255, 0.7);
@@ -10,15 +14,27 @@
   border-radius: 4px;
   width: 100%;
 }
+.main-container {
+  width: 50%;
+}
 .main-group {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 .left-group {
   display: flex;
+  float: left;
   flex-direction: column;
   justify-content: space-between;
+  width: 50%;
+}
+.right-group {
+  display: flex;
+  float: right;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
 }
 .quote {
   display: flex;

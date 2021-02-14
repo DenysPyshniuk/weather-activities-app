@@ -2,7 +2,7 @@
 
 const Activities = () => {
   return (
-    <div>
+    <div className='right-group'>
       <div className='container'>
         Weather Activities
         <div>
