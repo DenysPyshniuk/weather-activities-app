@@ -1,6 +1,6 @@
 import { ActivityCard } from "./ActivityCard"
 
-type ActivityProps = {
+export type ActivityProps = {
   activities?: {
   id: number;
   title: string;
@@ -20,33 +20,29 @@ const props = {
   }
 };
 
-
+// props.activities.map((activity) =>
 
 const Activities: React.FC<ActivityProps> = (props) => {
 
-  const events = props.activities.map((activity: any) => {
-    return (
-      <ActivityCard
-      id = {activity.id}
-      title = {activity.name}
-      date = {activity.date}
-      description = {activity.description}
-      icon = {activity.icon}
-      suggested_clothing = {activity.suggested_clothing}
-      />
-    )
-  });
+      // <ActivityCard
+      // id = {props.activities.id}
+      // title = {props.activities.title}
+      // date = {props.activities.date}
+      // description = {props.activities.description}
+      // icon = {props.activities.icon}
+      // suggested_clothing = {props.activities.suggested_clothing}
+      // />
 
   return (
     <div>
       <div className='container'>
         Weather Activities
         <div>
-          <div>
             <ul>
-            { events }
+              <section>
+                { ActivityCard }
+              </section>
             </ul>
-          </div>
         </div>
       </div>
       <div className='container'>
@@ -57,8 +53,8 @@ const Activities: React.FC<ActivityProps> = (props) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 
 export default Activities
