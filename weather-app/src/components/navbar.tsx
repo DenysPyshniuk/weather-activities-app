@@ -3,7 +3,7 @@ const Navbar = () => {
     <div className='navbar'>
       <p>Meteorol-OG</p>
       <div className="nav-right">
-        <button className='menu'></button>
+        <button className='menu'>*</button>
         <p> February 14, 2021 </p>
       </div>
     </div>
