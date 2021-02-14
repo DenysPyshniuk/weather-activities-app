@@ -19,7 +19,10 @@ const DayWeather = () => {
     ],
     base: String,
     main: {
+      feels_like: 2,
       temp: 5,
+      temp_min: 1,
+      temp_max: 5,
     },
     visibility: 0,
     wind: {},
@@ -62,17 +65,34 @@ const DayWeather = () => {
             <span>{weather.name}</span>
             <sup>{weather.sys.country}</sup>
           </h2>
-          <div className="city-temp">
-            {Math.round(weather.main.temp)}
-            <sup>&deg;C</sup>
-          </div>
-          <div className="info">
-            <img
-              className="city-icon"
-              src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
-              alt={weather.weather[0].description}
-            />
-            <p>{weather.weather[0].description}</p>
+          <div>
+            <div>
+              <pre>
+                Day {Math.round(weather.main.temp_max)}
+                <sup>&deg;C</sup> Night {Math.round(weather.main.temp_min)}
+                <sup>&deg;C</sup>
+              </pre>
+            </div>
+            <div className="parent_div">
+              <div className="city-temp">
+                {Math.round(weather.main.temp)}
+                <sup>&deg;C</sup>
+              </div>
+              <div className="info">
+                <img
+                  className="city-icon"
+                  src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+                  alt={weather.weather[0].description}
+                />
+                <p id="weather-description">{weather.weather[0].description}</p>
+              </div>
+            </div>
+            <div id="feels">
+              <pre>
+                Feels like {Math.round(weather.main.feels_like)}
+                <sup>&deg;C</sup>
+              </pre>
+            </div>
           </div>
         </div>
       )}
