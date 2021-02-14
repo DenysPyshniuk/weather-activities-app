@@ -2,22 +2,22 @@
 
 const Activities = () => {
   return (
-    <div>
-      <div className='container'>
+    <div className='right-group'>
+      <div className='activities'>
         Weather Activities
-        <div>
-          <div>
+        <div className='events'>
+          <div className="event-card">
             Activity 1
           </div>
-          <div>
+          <div className="event-card">
             Activity 2
           </div>
-          <div>
+          <div className="event-card">
             Activity 3
           </div>
         </div>
       </div>
-      <div className='container'>
+      <div className='add-new'>
         <h4>Bored?</h4>
         <div className='act-new'>
           Suggested Activity
