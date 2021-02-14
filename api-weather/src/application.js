@@ -41,10 +41,12 @@ module.exports = function application(
   app.use('/api', activities(db))
   app.use('/api', quotes(db))
 
-  Promise.all([
-    read(path.resolve(__dirname, `db/schema/create.sql`)),
-    read(path.resolve(__dirname, `db/schema/${ENV}.sql`))
-  ])
+  if (ENV === 'developement') {
+
+    Promise.all([
+      read(path.resolve(__dirname, `db/schema/create.sql`)),
+      read(path.resolve(__dirname, `db/schema/${ENV}.sql`))
+    ])
     .then(([create, seed]) => {
       app.get('/api/debug/reset', (request, response) => {
         db.query(create)
@@ -58,9 +60,10 @@ module.exports = function application(
     .catch(error => {
       console.log(`Error setting up the reset route: ${error}`)
     })
-
-  app.close = function() {
-    return db.end();
-  } 
-  return app
+  }
+    
+    app.close = function() {
+      return db.end();
+    } 
+    return app
 }
