@@ -9,7 +9,6 @@ import Main from './main'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Navbar />
     <Main />
   </React.StrictMode>,
   document.getElementById('root')
