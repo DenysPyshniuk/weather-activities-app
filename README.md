@@ -15,3 +15,8 @@ http://api.openweathermap.org/data/2.5/weather?q=Vancouver&units=metric&appid=a9
 # weather api (currently not working)
 
 https://api.weatherapi.com/v1/current.json?key=6935fa4c8a364530a5d04857211302&q=Vancouver
+
+# if port already in use
+lsof -w -n -i tcp: (port-number)
+
+kill -9 (PID)
