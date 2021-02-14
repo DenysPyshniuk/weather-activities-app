@@ -1,19 +1,19 @@
-const fs = require('fs')
-const path = require('path')
+const fs = require("fs");
+const path = require("path");
 
-const express = require('express')
-const bodyparser = require('body-parser')
-const helmet = require('helmet')
-const cors = require('cors')
+const express = require("express");
+const bodyparser = require("body-parser");
+const helmet = require("helmet");
+const cors = require("cors");
 
-const app = express()
+const app = express();
+
+const db = require("./db");
 
 const weather = require('./routes/weather')
 const activities = require('./routes/activities')
 const quotes = require('./routes/quotes')
 
-const db = require('./db')
-const { response } = require('express')
 
 function read(file) {
   return new Promise((resolve, reject) => {
