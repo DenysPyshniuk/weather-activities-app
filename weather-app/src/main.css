@@ -39,9 +39,11 @@ body {
 }
 .quote {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  height: 80px;
+  padding: 1em;
 }
 .button {
   height: 2em;
@@ -71,7 +73,7 @@ body {
 .event-card {
   display: inline-block;
   flex-direction: row;
-  width: 80%;
+  width: 90%;
   height: 5em;
   border: thin;
   border-color: rgba(0, 123, 255, 0.7);
