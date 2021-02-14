@@ -1,19 +1,39 @@
+import { ActivityCard } from "./ActivityCard"
 
+type ActivityProps = {
+  id: any;
+  key: any;
+  title: string;
+  date: string;
+  description: string;
+  icon: string;
+  suggested_clothing: string;
+}
 
-const Activities = () => {
+const Activities: React.FC<ActivityProps > = (props) => {
+
+  // const events = props.activities.map((activity: any) => {
+  //   return (
+  //     <ActivityCard
+  //     key = {activity.id}
+  //     title = {activity.name}
+  //     date = {activity.date}
+  //     description = {activity.description}
+  //     icon = {activity.icon}
+  //     suggested_clothing = {activity.suggested_clothing}
+  //     />
+  //   )
+  // })
+
   return (
     <div>
       <div className='container'>
         Weather Activities
         <div>
           <div>
-            Activity 1
-          </div>
-          <div>
-            Activity 2
-          </div>
-          <div>
-            Activity 3
+            <ul>
+            {/* { ActivityCard } */}
+            </ul>
           </div>
         </div>
       </div>
