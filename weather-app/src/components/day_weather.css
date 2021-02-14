@@ -16,45 +16,46 @@ body,
 }
 
 .main-container {
+  margin: 5px;
+  width: 30rem;
   height: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-direction: column;
+  border-radius: 20px;
+  background: rgba(144, 188, 245, 0.85);
+  box-shadow: 5px 5px 5px 0px rgba(15, 15, 15, 0.404);
 }
 
 .search {
+  width: -webkit-fill-available;
+  margin-top: 3%;
+  margin-left: 10%;
+  margin-right: 10%;
   outline: none;
-  padding: 20px 7%;
-  border-radius: 20px;
+  padding: 11px 7%;
+  border-radius: 15px;
   border: none;
   margin-bottom: 5%;
-  background: rgba(250, 250, 250, 0.85);
+  background: rgba(250, 250, 250, 0.6);
 }
 
 .city {
+  width: -webkit-fill-available;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 40px 8%;
+  padding-top: 2px;
+  /* padding: 40px 8%; */
   border-radius: 20px;
-  background: rgba(144, 188, 245, 0.85);
-  box-shadow: 10px 10px 5px 0px rgba(15, 15, 15, 0.404);
 }
 
 p {
   margin-top: 10px;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-}
-
-.city-temp {
-  font-size: 5rem;
-  font-weight: bold;
-  margin-top: 10px;
-  color: #1e2432;
-  text-align: center;
 }
 
 .city sup {
@@ -74,15 +75,40 @@ p {
 }
 
 .city-icon {
-  margin-top: 10px;
+  margin-top: -10px;
   width: 100px;
   height: 100px;
+}
+
+.parent_div {
+  width: 100px;
+  height: 100px;
+  /* margin-right: 20px; */
+  /* float: left; */
+}
+
+.city-temp {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #1e2432;
+  text-align: center;
+  margin-right: 40px;
+  float: left;
 }
 
 .info {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#weather-description {
+  margin-top: -15px;
+}
+
+#feels {
+  margin-bottom: 3rem;
 }
 
 @media only screen and (max-width: 600px) {
