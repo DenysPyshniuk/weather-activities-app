@@ -1,0 +1,22 @@
+.activities {
+  padding: 2em;
+}
+.events {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 85%;
+  padding-top: 1em;
+}
+.event-card {
+  display: inline-block;
+  flex-direction: row;
+  width: 90%;
+  height: 5em;
+  border: thin;
+  border-color: rgba(0, 123, 255, 0.7);
+  border-style: solid;
+  border-radius: 4px;
+  padding: 1.5em;
+  margin: 8px auto;
+}

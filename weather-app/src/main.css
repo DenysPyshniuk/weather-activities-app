@@ -16,7 +16,7 @@ body {
   width: 100%;
 }
 .main-container {
-  width: 50%;
+  width: 95%;
 }
 .main-group {
   display: flex;
@@ -59,44 +59,4 @@ body {
   border-color: rgba(0, 123, 255, 0.7);
   border-style: solid;
   border-radius: 4px;
-}
-.activities {
-  padding: 2em;
-}
-.events {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 85%;
-  padding-top: 1em;
-}
-.event-card {
-  display: inline-block;
-  flex-direction: row;
-  width: 90%;
-  height: 5em;
-  border: thin;
-  border-color: rgba(0, 123, 255, 0.7);
-  border-style: solid;
-  border-radius: 4px;
-  padding: 1.5em;
-  margin: 8px auto;
-}
-.navbar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 0 1em;
-}
-.nav-right {
-  display: flex;
-  float: right;
-  width: 30%;
-  align-items: center;
-  justify-content: flex-end;
-}
-.menu {
-  height: 1.5em;
-  width: 1.5em;
-  margin-right: 1em;
 }

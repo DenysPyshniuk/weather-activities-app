@@ -1,4 +1,4 @@
-
+import "./activities.css"
 
 const Activities = () => {
   return (
