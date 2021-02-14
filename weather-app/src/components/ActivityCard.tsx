@@ -2,7 +2,6 @@ import "./ActivityCard.css"
 
 type ActivityProps = {
   id: any;
-  key: any;
   title: string;
   date: string;
   description: string;
@@ -10,13 +9,7 @@ type ActivityProps = {
   suggested_clothing: string;
 }
 
-export const ActivityCard: React.FC<ActivityProps> = ({
-  title,
-  date,
-  description,
-  icon,
-  suggested_clothing
-}) => {
+export const ActivityCard: React.FC<ActivityProps> = (props) => {
   return (
   <section>
     <div>

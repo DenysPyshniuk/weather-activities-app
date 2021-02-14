@@ -1,29 +1,42 @@
 import { ActivityCard } from "./ActivityCard"
 
 type ActivityProps = {
+  activities: {
+  map: any,
   id: any;
-  key: any;
   title: string;
   date: string;
   description: string;
-  icon: string;
-  suggested_clothing: string;
+  icon?: string;
+  suggested_clothing?: string;
+  }
 }
 
-const Activities: React.FC<ActivityProps > = (props) => {
+const props = {
+  activities: {
+  id: 1,
+  title: "Hello",
+  date: "Feb 14, 2021",
+  description: "This is a test",
+  }
+};
 
-  // const events = props.activities.map((activity: any) => {
-  //   return (
-  //     <ActivityCard
-  //     key = {activity.id}
-  //     title = {activity.name}
-  //     date = {activity.date}
-  //     description = {activity.description}
-  //     icon = {activity.icon}
-  //     suggested_clothing = {activity.suggested_clothing}
-  //     />
-  //   )
-  // })
+
+
+const Activities: React.FC<ActivityProps> = (props) => {
+
+  const events = props.activities.map((activity: any) => {
+    return (
+      <ActivityCard
+      id = {activity.id}
+      title = {activity.name}
+      date = {activity.date}
+      description = {activity.description}
+      icon = {activity.icon}
+      suggested_clothing = {activity.suggested_clothing}
+      />
+    )
+  });
 
   return (
     <div>
@@ -32,7 +45,7 @@ const Activities: React.FC<ActivityProps > = (props) => {
         <div>
           <div>
             <ul>
-            {/* { ActivityCard } */}
+            { events }
             </ul>
           </div>
         </div>
