@@ -1,9 +1,8 @@
 import { ActivityCard } from "./ActivityCard"
 
 type ActivityProps = {
-  activities: {
-  map: any,
-  id: any;
+  activities?: {
+  id: number;
   title: string;
   date: string;
   description: string;
