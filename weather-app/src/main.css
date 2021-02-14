@@ -51,6 +51,13 @@ body {
   flex-direction: row;
   justify-content: space-between;
 }
+.add-new {
+  padding: 0 1em;
+  border: thin;
+  border-color: rgba(0, 123, 255, 0.7);
+  border-style: solid;
+  border-radius: 4px;
+}
 .activities {
   padding: 2em;
 }
@@ -77,12 +84,14 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding: 0 1em;
 }
 .nav-right {
   display: flex;
   float: right;
   width: 30%;
   align-items: center;
+  justify-content: flex-end;
 }
 .menu {
   height: 1.5em;

@@ -17,7 +17,7 @@ const Activities = () => {
           </div>
         </div>
       </div>
-      <div className='container'>
+      <div className='add-new'>
         <h4>Bored?</h4>
         <div className='act-new'>
           Suggested Activity
