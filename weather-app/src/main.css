@@ -2,10 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: auto;
+  margin: 0;
 }
 body {
-  width: 100%;
+  width: 95%;
   height: 100vh;
 }
 .container {
@@ -36,14 +36,6 @@ body {
   flex-direction: column;
   justify-content: space-between;
   width: 50%;
-}
-.quote {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  height: 80px;
-  padding: 1em;
 }
 .button {
   height: 2em;

@@ -18,7 +18,7 @@ body,
 .main-container {
   margin: 5px;
   width: 30rem;
-  height: 100%;
+  height: 75%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
