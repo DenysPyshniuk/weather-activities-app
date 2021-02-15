@@ -7,8 +7,9 @@ module.exports = db => {
       FROM quotes`
     )
     .then(({rows: quotes}) => {
-      console.log(quotes)
+      response.json(quotes)
     })
+    .catch(e => console.log(e))
   })
   return router
 }

@@ -28,6 +28,7 @@ function read(file) {
       }
     )
   })
+  .catch(e => console.log(e))
 }
 
 module.exports = function application(
@@ -41,11 +42,11 @@ module.exports = function application(
   app.use('/api', activities(db))
   app.use('/api', quotes(db))
 
-  if (ENV === 'developement') {
-
+  if (ENV === 'development') {
+    console.log('Outside promise: ' + ENV)
     Promise.all([
       read(path.resolve(__dirname, `db/schema/create.sql`)),
-      read(path.resolve(__dirname, `db/schema/${ENV}.sql`))
+      read(path.resolve(__dirname, `db/seeds/${ENV}.sql`))
     ])
     .then(([create, seed]) => {
       app.get('/api/debug/reset', (request, response) => {

@@ -7,7 +7,7 @@ module.exports = db => {
       FROM activities`
     )
     .then(({rows: activities}) => {
-      console.log(activities)
+      response.json(activities)
     })
   })
   return router

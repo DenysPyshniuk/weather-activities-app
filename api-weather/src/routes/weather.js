@@ -7,7 +7,7 @@ module.exports = db => {
       FROM weather_stats`
     )
     .then(({rows: weather}) => {
-      console.log(weather)
+      response.json(weather)
     })
   })
   return router

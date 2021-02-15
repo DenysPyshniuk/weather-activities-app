@@ -1,6 +1,7 @@
 const path = require('path')
 
-const ENV = process.env.NODE_ENV || 'development'
+const ENV = 'development'
+
 console.log(ENV)
 const PATH = path.resolve(__dirname, ('../.env.' + ENV))
 
