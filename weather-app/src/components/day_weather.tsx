@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { fetchWeather } from "../api/fetchWeather";
+import { fetchCurrentWeather } from "../api/fetchCurrentWeather";
 import "./day_weather.css";
 
 const DayWeather = () => {
@@ -43,7 +43,7 @@ const DayWeather = () => {
 
   const search = async (e: any) => {
     if (e.key == "Enter") {
-      const data = await fetchWeather(query);
+      const data = await fetchCurrentWeather(query);
       setWeather(data);
       setQuery("");
     }
