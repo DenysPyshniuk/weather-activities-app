@@ -3,10 +3,10 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 0 1em;
+  width: 100%;
 }
 .nav-right {
   display: flex;
-  float: right;
   width: 30%;
   align-items: center;
   justify-content: flex-end;

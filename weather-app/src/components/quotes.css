@@ -1,0 +1,22 @@
+.quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 90px;
+  padding: 1em;
+}
+.container-quote-text {
+  font-weight: 250;
+  font-style: italic;
+}
+.new-quote {
+  font-size: 10px;  
+  padding: 5px;
+  border-radius: 75%;
+  background-color: white;
+}
+.new-quote:hover {
+  background-color: black;
+  color: white;
+}
