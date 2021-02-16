@@ -9,12 +9,13 @@ type QuoteProps = {
   insult?: string;
   messages?: string;
   value?: string;
+  data?: [{}];
 }
 
 type QuoteTypes = {
   chuckQuote?: string;
   kanyeQuote?: string;
-  wholesomeQuote?: {text: string, author: string | null}[];
+  wholesomeQuote?: {id: number, text: string, author: string | null}[];
   evilQuote?: string;
   trumpQuote?: string;
   localQuote?: {id: number, quote: string, author: string}[];
@@ -25,8 +26,8 @@ const Quotes: React.FC<QuoteProps> = () => {
     chuckQuote: 'I am a quote',
     kanyeQuote: 'I am also a quote',
     trumpQuote: 'I am quote',
-    wholesomeQuote: [{text: 'Tacos are life', author: 'El Paso'}],
-    localQuote: [{id: 0, quote: 'hello world', author: 'anon LHL student'}]
+    wholesomeQuote: [{id: 2, text: 'Tacos are life', author: 'El Paso'}],
+    localQuote: [{id: 1, quote: 'hello world', author: 'anon LHL student'}]
   });
 
   function refreshPage() {
@@ -36,7 +37,7 @@ const Quotes: React.FC<QuoteProps> = () => {
 
   useEffect(() => {
     Promise.all([
-      axios.get<QuoteProps>('https://api.chucknorris.io/jokes/random'),
+      axios.get<QuoteProps>('http://api.icndb.com/jokes/random/10'),
       axios.get<QuoteProps>('https://api.kanye.rest'),
       axios.get<QuoteProps>('https://type.fit/api/quotes'),
       axios.get<QuoteProps>('https://api.whatdoestrumpthink.com/api/v1/quotes/'),
@@ -51,13 +52,13 @@ const Quotes: React.FC<QuoteProps> = () => {
         evilQuote: all[3].data.insult,
         localQuote: all[4].data
         })
-        console.log(all[4].data)
+        console.log("wholesome:", all[2].data)
       }).catch((err) => console.log(err));
   }, []);
   
-  // console.log(state.localQuote)
-  // console.log(state.wholesomeQuote)
-  // console.log(state.trumpQuote)
+  console.log("chuck", state.chuckQuote)
+  // console.log("local", state.localQuote)
+  // console.log("wholesome:", state.wholesomeQuote)
 
   return (
     <div className='container quote'>
