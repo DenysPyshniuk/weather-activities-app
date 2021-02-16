@@ -2,7 +2,7 @@ const axios = require("axios");
 
 axios
   .get(
-    "http://api.openweathermap.org/data/2.5/weather?q=ncouver&units=metric&APPID=c70d729ed6b851bbd3ff70e4f94e5b0d"
+    "http://api.openweathermap.org/data/2.5/weather?q=Vancouver&units=metric&APPID=c70d729ed6b851bbd3ff70e4f94e5b0d"
   )
   .then((res) => {
     // console.log(res.data);
@@ -13,7 +13,7 @@ axios
     );
   })
   .catch((err) => {
-    console.log("Wrong City!");
+    console.log(err);
   })
   .then((res) => {
     console.log(res.data[0]);
