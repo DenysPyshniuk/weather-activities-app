@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { fetchCurrentWeather } from "../api/fetchCurrentWeather";
 
 import axios from 'axios'
 import "./day_weather.css";
