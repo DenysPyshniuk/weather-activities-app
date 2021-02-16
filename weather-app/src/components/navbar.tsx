@@ -1,3 +1,4 @@
+import { getDefaultSettings } from "http2"
 import "./navbar.css"
 
 const Navbar = () => {
@@ -6,7 +7,7 @@ const Navbar = () => {
       <p>Meteorol-OG</p>
       <div className="nav-right">
         <button className='menu'>*</button>
-        <p> February 14, 2021 </p>
+        <p> {Date().slice(0, 16)} </p>
       </div>
     </div>
   )

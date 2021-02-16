@@ -4,6 +4,7 @@
   justify-content: space-between;
   padding: 0 1em;
   width: 100%;
+  overflow: hidden;
 }
 .nav-right {
   display: flex;

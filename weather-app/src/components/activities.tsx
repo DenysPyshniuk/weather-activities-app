@@ -28,7 +28,7 @@ const Activities: React.FC = () => {
       setBored(res.data)
     }).catch(e => console.log(e))
   }, [])
-  function refreshPage() {
+  function newActivity() {
     axios.get<iBored>('http://www.boredapi.com/api/activity/')
     .then(res => {
       setBored(res.data)
@@ -55,7 +55,7 @@ const Activities: React.FC = () => {
           <h4>Bored?</h4>
           <button 
             className='button'
-            onClick={refreshPage}
+            onClick={newActivity}
             >
               New
             </button>
