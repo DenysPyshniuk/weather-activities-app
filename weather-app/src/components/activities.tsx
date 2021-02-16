@@ -1,6 +1,39 @@
+import React, { useState, useEffect } from 'react'
+import axios from 'axios'
 import "./activities.css"
 
-const Activities = () => {
+type ibored = {
+  activity: string
+  type: string
+  participants: string
+  price: number
+  link: string
+  key: string
+  accessibility: number
+}
+
+const Activities: React.FC = () => {
+  const [ bored, setBored ] = useState<ibored>({
+    activity: 'ROCK, PAPER, SCISSORS, LIZARD, SPOCK',
+    type: 'recreation',
+    participants: '2',
+    price: 0,
+    link: '',
+    key: '',
+    accessibility: 0
+  })
+  useEffect(() => {
+    axios.get<ibored>('http://www.boredapi.com/api/activity/')
+    .then(res => {
+      setBored(res.data)
+    }).catch(e => console.log(e))
+  }, [])
+  function refreshPage() {
+    axios.get<ibored>('http://www.boredapi.com/api/activity/')
+    .then(res => {
+      setBored(res.data)
+    })
+  }
   return (
     <div className='right-group'>
       <div className='activities'>
@@ -20,8 +53,13 @@ const Activities = () => {
       <div className='add-new'>
         <h4>Bored?</h4>
         <div className='act-new'>
-          Suggested Activity
-          <button className='button'>New</button>
+          {bored.activity}
+          <button 
+          className='button'
+          onClick={refreshPage}
+          >
+            New
+          </button>
         </div>
       </div>
     </div>
