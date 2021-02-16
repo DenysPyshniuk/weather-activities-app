@@ -57,6 +57,7 @@ const DayWeather = () => {
         data: {query}
       }).then(res => {
         setWeather(res.data.day)
+        // weekdata in res.data.week
       }).catch(e => console.log(e))
       setQuery("");
     }

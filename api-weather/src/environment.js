@@ -2,7 +2,6 @@ const path = require('path')
 
 const ENV = 'development'
 
-console.log(ENV)
 const PATH = path.resolve(__dirname, ('../.env.' + ENV))
 
 require('dotenv').config({ path: PATH })
