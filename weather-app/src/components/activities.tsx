@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import "./activities.css"
 
-type ibored = {
+type iBored = {
   activity: string
   type: string
   participants: string
@@ -13,7 +13,7 @@ type ibored = {
 }
 
 const Activities: React.FC = () => {
-  const [ bored, setBored ] = useState<ibored>({
+  const [ bored, setBored ] = useState<iBored>({
     activity: 'ROCK, PAPER, SCISSORS, LIZARD, SPOCK',
     type: 'recreation',
     participants: '2',
@@ -23,13 +23,13 @@ const Activities: React.FC = () => {
     accessibility: 0
   })
   useEffect(() => {
-    axios.get<ibored>('http://www.boredapi.com/api/activity/')
+    axios.get<iBored>('http://www.boredapi.com/api/activity/')
     .then(res => {
       setBored(res.data)
     }).catch(e => console.log(e))
   }, [])
   function refreshPage() {
-    axios.get<ibored>('http://www.boredapi.com/api/activity/')
+    axios.get<iBored>('http://www.boredapi.com/api/activity/')
     .then(res => {
       setBored(res.data)
     })
@@ -51,15 +51,29 @@ const Activities: React.FC = () => {
         </div>
       </div>
       <div className='add-new'>
-        <h4>Bored?</h4>
-        <div className='act-new'>
-          {bored.activity}
+        <div className='bored-container'>
+          <h4>Bored?</h4>
           <button 
-          className='button'
-          onClick={refreshPage}
-          >
-            New
-          </button>
+            className='button'
+            onClick={refreshPage}
+            >
+              New
+            </button>
+        </div>
+        <div className='act-new'>
+          <div>
+            <p>
+              Activity: {bored.activity}
+            </p>
+          </div>
+          <div>
+            <p>
+              Category: {bored.type}
+            </p>
+            <p>
+              participants: {bored.participants}
+            </p>
+          </div>
         </div>
       </div>
     </div>

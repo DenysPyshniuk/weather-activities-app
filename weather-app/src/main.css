@@ -40,11 +40,6 @@ body {
 .button {
   height: 2em;
 }
-.act-new {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
 .add-new {
   padding: 0 1em;
   border: thin;
