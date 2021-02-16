@@ -1,6 +1,11 @@
 const fs = require("fs");
 const path = require("path");
 
+// import axios from 'axios'
+// import fetchCurrentWeather from "./helpers/fetchCurrentWeather";
+// const fetchCurrentWeather = require('./helpers')
+
+
 const express = require("express");
 const bodyparser = require("body-parser");
 const helmet = require("helmet");
@@ -10,9 +15,11 @@ const app = express();
 
 const db = require("./db");
 
+
 const weather = require('./routes/weather')
 const activities = require('./routes/activities')
 const quotes = require('./routes/quotes')
+const axiosApi = require('./routes/axios-to-api')
 
 
 function read(file) {
@@ -41,6 +48,7 @@ module.exports = function application(
   app.use('/api', weather(db))
   app.use('/api', activities(db))
   app.use('/api', quotes(db))
+  app.use('/api', axiosApi())
 
   if (ENV === 'development') {
     console.log('Outside promise: ' + ENV)

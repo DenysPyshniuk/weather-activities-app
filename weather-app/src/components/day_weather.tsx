@@ -1,6 +1,14 @@
 import { useState } from "react";
 import { fetchCurrentWeather } from "../api/fetchCurrentWeather";
+
+import axios from 'axios'
 import "./day_weather.css";
+
+type post = {
+  method: string,
+  url: string,
+  data: string
+}
 
 const DayWeather = () => {
   const [query, setQuery] = useState("");
@@ -42,9 +50,14 @@ const DayWeather = () => {
   });
 
   const search = async (e: any) => {
-    if (e.key == "Enter") {
-      const data = await fetchCurrentWeather(query);
-      setWeather(data);
+    if (e.key == "Enter" || e.key == 'Return') {
+      axios({
+        method: 'post',
+        url: 'http://localhost:8001/api/dayweather',
+        data: {query}
+      }).then(res => {
+        setWeather(res.data.day)
+      }).catch(e => console.log(e))
       setQuery("");
     }
   };
