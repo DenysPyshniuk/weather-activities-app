@@ -1,3 +1,7 @@
+type Props = {
+  event?: activities[{}]
+}
+
 type iBored = {
   activity: string
   type: string
@@ -8,7 +12,7 @@ type iBored = {
   accessibility: number
 }
 
-//handle activity props/db requests
+//handle activity db requests
 type activityType = {
   id: number
   weather_id: number

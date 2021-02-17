@@ -6,11 +6,9 @@ import Navbar from "./components/navbar";
 import "./main.css";
 import useActivityData from "./hooks/useActivityData";
 
-const Main = (props: any) => {
+const Main: React.FC<Props> = (props) => {
   const {
-    state: {
-      events
-    }
+    event
   } = useActivityData();
   
   return (
@@ -26,7 +24,7 @@ const Main = (props: any) => {
           <WeekWeather />
         </div>
         <Activities 
-          events={events}
+          event={event}
         />
       </div>
     </body>

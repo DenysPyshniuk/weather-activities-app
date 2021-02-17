@@ -6,7 +6,7 @@ import "./activities.css"
 import ActivityCard from './activity_card'
 
 
-const Activities: React.FC = () => {
+const Activities: React.FC<Props> = (props) => {
   const [ bored, setBored ] = useState<iBored>({
     activity: 'ROCK, PAPER, SCISSORS, LIZARD, SPOCK',
     type: 'recreation',
@@ -28,6 +28,9 @@ const Activities: React.FC = () => {
       setBored(res.data)
     })
   }
+
+  console.log(props.event)
+
   return (
     <div className='right-group'>
       <div className='activities'>
