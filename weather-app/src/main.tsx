@@ -4,8 +4,10 @@ import Activities from "./components/activities";
 import WeekWeather from "./components/week_weather";
 import Navbar from "./components/navbar";
 import "./main.css";
+import useWeatherData from './hooks/useWeatherData'
 
 const Main = () => {
+  const { dayWeather, setDayWeather, weekWeather, setWeekWeather } = useWeatherData()
   return (
     <body>
       <header>
@@ -15,8 +17,8 @@ const Main = () => {
       <div className="main-group">
         <div className="left-group container">
           {/* <Search /> */}
-          <DayWeather />
-          <WeekWeather />
+          <DayWeather weather={dayWeather} setWeather={setDayWeather} setWeekWeather={setWeekWeather} />
+          <WeekWeather weather={weekWeather} setWeather={setWeekWeather} />
         </div>
         <Activities />
       </div>

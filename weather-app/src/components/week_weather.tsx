@@ -1,10 +1,11 @@
-import { useState } from "react";
-import axios from "axios";
 import "./week_weather.css";
 
-const WeekWeather = () => {
-  const [weather, setWeather] = useState();
+interface WeekWeatherProps extends WeatherProps<WeekWeather> {}
 
+
+const WeekWeather: React.FC<WeekWeatherProps> = (props) => {
+  const { weather } = props;
+  console.log('weekweather:', weather)
   return (
     <div className="week-container">
       <ul className="week-ul">

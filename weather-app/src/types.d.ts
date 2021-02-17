@@ -50,3 +50,53 @@ type post = {
   url: string;
   data: string;
 };
+
+interface DayWeather {
+  base: string;
+  clouds: {};
+  cod: number;
+  coord: {
+    lon: number;
+    lat: number;
+  };
+  dt: number;
+  id: number;
+  main: {
+    temp_max: number;
+    temp_min: number;
+    temp: number;
+    feels_like: number
+  };
+  name: string;
+  sys: {
+    type: number;
+    id: number;
+    sunrise: number;
+    sunset: number;
+    country: string;
+  };
+  timezone: number;
+  visibility: number;
+  weather: {
+    id: number;
+    main: string;
+    description: string;
+    icon: string;
+  }[];
+  wind: {};
+};
+  
+interface WeekWeather {
+  current: {};
+  daily: {}[];
+  hourly: {}[];
+  lat: number;
+  lon: number;
+  timezone: string;
+  timezone_offset: number;
+};
+
+interface WeatherProps<T> {
+  weather?: T;
+  setWeather: (weather: T) => void;
+}
