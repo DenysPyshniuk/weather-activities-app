@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import "./activities.css"
+import ActivityCard from './activity_card'
 
 const Activities: React.FC = () => {
   const [ bored, setBored ] = useState<iBored>({
@@ -30,13 +31,13 @@ const Activities: React.FC = () => {
         Weather Activities
         <div className='events'>
           <div className="event-card">
-            Activity 1
+            <ActivityCard />
           </div>
           <div className="event-card">
-            Activity 2
+            <ActivityCard />
           </div>
           <div className="event-card">
-            Activity 3
+            <ActivityCard />
           </div>
         </div>
       </div>

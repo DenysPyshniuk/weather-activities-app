@@ -8,6 +8,20 @@ type iBored = {
   accessibility: number
 }
 
+//handle activity props/db requests
+type activityType = {
+  id: number
+  weather_id: number
+  activity_type: string
+  hi_temp: number
+  low_temp: number
+  activity_name: string
+  activity_description: string
+  activity_date: string
+}[{}]
+
+type activities = activityType[{}]
+
 //handles quotes state
 type QuoteProps = {
   chuckQuote?: string;
@@ -37,3 +51,5 @@ type trumpReq = {
 type localQuote = {
   id: number, quote: string, author: string
 }[]
+
+

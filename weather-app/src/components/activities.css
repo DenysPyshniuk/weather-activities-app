@@ -1,24 +1,46 @@
 .activities {
-  padding: 2em;
+  padding: 1em;
+  height: 500px;
 }
 .events {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  font-size: 1em;
   height: 90%;
   padding-top: 1em;
 }
 .event-card {
   display: inline-block;
   flex-direction: row;
-  width: 90%;
-  height: 5em;
+  width: 95%;
+  height: 8em;
   border: thin;
   border-color: rgba(0, 123, 255, 0.7);
   border-style: solid;
   border-radius: 4px;
-  padding: 1.5em;
   margin: 8px auto;
+  align-items: space-between;
+}
+.activity-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.card-header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.activity-list p {
+  margin: 0;
+}
+.card-icons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 .bored-container {
   display: flex;
@@ -26,7 +48,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.act-new {
+.add-new {
   display: flex;
   flex-direction: column;
 }
