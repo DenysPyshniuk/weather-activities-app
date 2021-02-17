@@ -29,23 +29,33 @@ const Activities: React.FC<Props> = (props) => {
     })
   }
 
-  console.log(props.event)
+  const singleEvent = props.event.map((activity: any) => {
+    return (
+      <ActivityCard
+      id={activity.id}
+      weather_id={activity.weather_id}
+      activity_type={activity.activity_type}
+      hi_temp={activity.hi_temp}
+      low_temp={activity.low_temp}
+      activity_name={activity.activity_name}
+      activity_description={activity.activity_description}
+      activity_date={activity.activity_date}
+    />
+    );
+  });
+
+  // console.log(props.event)
+  // [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
+  // 0: {id: 1, weather_id: 4, activity_type: "Consectetuer Adipiscing Elit Consulting", hi_temp: 21, low_temp: 14, …}
+
 
   return (
     <div className='right-group'>
       <div className='activities'>
         Weather Activities
-        <div className='events'>
-          <div className="event-card">
-            <ActivityCard />
-          </div>
-          <div className="event-card">
-            <ActivityCard />
-          </div>
-          <div className="event-card">
-            <ActivityCard />
-          </div>
-        </div>
+        <ul className='events'>          
+          {singleEvent}
+        </ul>
       </div>
       <div className='add-new'>
         <div className='bored-container'>
@@ -79,3 +89,4 @@ const Activities: React.FC<Props> = (props) => {
 
 
 export default Activities
+

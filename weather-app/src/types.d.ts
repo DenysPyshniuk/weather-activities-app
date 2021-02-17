@@ -1,5 +1,5 @@
 type Props = {
-  event?: activities[{}]
+  event?: ActivitiesArr
 }
 
 type iBored = {
@@ -13,7 +13,7 @@ type iBored = {
 }
 
 //handle activity db requests
-type activityType = {
+type ActivityType = {
   id: number
   weather_id: number
   activity_type: string
@@ -24,7 +24,7 @@ type activityType = {
   activity_date: string
 }[{}]
 
-type activities = activityType[{}]
+type ActivitiesArr = ActivityType[{}]
 
 //handles quotes state
 type QuoteProps = {
