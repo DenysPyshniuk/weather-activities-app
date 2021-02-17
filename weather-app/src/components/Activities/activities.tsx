@@ -32,7 +32,7 @@ const Activities: React.FC<Props> = (props) => {
   const singleEvent = props.event.map((activity: any) => {
     return (
       <ActivityCard
-      id={activity.id}
+      key={activity.id}
       weather_id={activity.weather_id}
       activity_type={activity.activity_type}
       hi_temp={activity.hi_temp}

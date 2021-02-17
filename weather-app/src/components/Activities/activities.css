@@ -2,6 +2,7 @@
   padding: 1em;
   height: 500px;
 }
+
 .events {
   display: flex;
   flex-direction: column;
@@ -9,6 +10,8 @@
   font-size: 1em;
   height: 90%;
   padding-top: 1em;
+  max-height: 400px;
+  overflow-y: scroll;
 }
 .event-card {
   display: inline-block;

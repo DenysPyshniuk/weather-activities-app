@@ -6,7 +6,7 @@ import Navbar from "./components/navbar";
 import "./main.css";
 import useActivityData from "./hooks/useActivityData";
 
-const Main: React.FC<Props> = (props) => {
+const Main: React.FC<Props> = () => {
   const {
     event
   } = useActivityData();
