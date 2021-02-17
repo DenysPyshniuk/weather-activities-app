@@ -1,11 +1,18 @@
 import DayWeather from "./components/day_weather";
 import Quotes from "./components/quotes";
-import Activities from "./components/activities";
+import Activities from "./components/Activities/activities";
 import WeekWeather from "./components/week_weather";
 import Navbar from "./components/navbar";
 import "./main.css";
+import useActivityData from "./hooks/useActivityData";
 
-const Main = () => {
+const Main = (props: any) => {
+  const {
+    state: {
+      events
+    }
+  } = useActivityData();
+  
   return (
     <body>
       <header>
@@ -18,7 +25,9 @@ const Main = () => {
           <DayWeather />
           <WeekWeather />
         </div>
-        <Activities />
+        <Activities 
+          events={events}
+        />
       </div>
     </body>
   );

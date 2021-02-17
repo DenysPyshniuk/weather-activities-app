@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
+import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { render } from 'react-dom';
 import axios from 'axios'
 import "./activities.css"
 import ActivityCard from './activity_card'
+
 
 const Activities: React.FC = () => {
   const [ bored, setBored ] = useState<iBored>({
