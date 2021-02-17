@@ -20,7 +20,7 @@ const Main = () => {
           <DayWeather weather={dayWeather} setWeather={setDayWeather} setWeekWeather={setWeekWeather} />
           <WeekWeather weather={weekWeather} setWeather={setWeekWeather} />
         </div>
-        <Activities />
+        <Activities weather={dayWeather} />
       </div>
     </body>
   );

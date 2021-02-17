@@ -2,7 +2,12 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import "./activities.css"
 
-const Activities: React.FC = () => {
+interface DayWeatherProps<T> {
+  weather?: T
+}
+
+const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
+  console.log('Activities', props.weather)
   const [ bored, setBored ] = useState<iBored>({
     activity: 'ROCK, PAPER, SCISSORS, LIZARD, SPOCK',
     type: 'recreation',
