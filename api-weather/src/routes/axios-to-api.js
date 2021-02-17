@@ -13,12 +13,17 @@ module.exports = id => {
       const dayBody = JSON.parse(body)
       weather.day = dayBody
       const coord = dayBody.coord
-      const weekUrl = `${url}onecall?lat=${coord.lat}&lon=${coord.lon}&units=metric&exclude=minutely&appid=${id}`
-      requester(weekUrl, function (error, resp, body) {
-        const weekBody = JSON.parse(body)
-        weather.week = weekBody
-        response.json(weather)
-      })
+      if (coord) {
+
+        const weekUrl = `${url}onecall?lat=${coord.lat}&lon=${coord.lon}&units=metric&exclude=minutely&appid=${id}`
+        requester(weekUrl, function (error, resp, body) {
+          const weekBody = JSON.parse(body)
+          weather.week = weekBody
+          response.json(weather)
+        })
+      } else {
+        response.json(error)
+      }
     })
   })
   return router
