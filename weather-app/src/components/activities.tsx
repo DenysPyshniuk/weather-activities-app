@@ -2,16 +2,6 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import "./activities.css"
 
-type iBored = {
-  activity: string
-  type: string
-  participants: string
-  price: number
-  link: string
-  key: string
-  accessibility: number
-}
-
 const Activities: React.FC = () => {
   const [ bored, setBored ] = useState<iBored>({
     activity: 'ROCK, PAPER, SCISSORS, LIZARD, SPOCK',

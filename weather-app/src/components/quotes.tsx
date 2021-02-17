@@ -2,21 +2,13 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import "./quotes.css"
 
-type QuoteProps = {
-  quote?: string;
-  text?: string;
-  author?: string;
-  value?: string;
-  chuckQuote?: string;
-  kanyeQuote?: string;
-  wholesomeQuote?: string;
-}
-
-const Quotes = ({ chuckQuote, kanyeQuote, wholesomeQuote }: QuoteProps) => {
+const Quotes = ({ chuckQuote, kanyeQuote, wholesomeQuote, trumpQuote, localQuote }: QuoteProps) => {
   const [state, setState] = useState({
     chuckQuote,
     kanyeQuote,
-    wholesomeQuote
+    wholesomeQuote,
+    trumpQuote,
+    localQuote
   });
 
   function refreshPage() {
@@ -25,18 +17,21 @@ const Quotes = ({ chuckQuote, kanyeQuote, wholesomeQuote }: QuoteProps) => {
 
   useEffect(() => {
     Promise.all([
-      axios.get<QuoteProps>('https://api.chucknorris.io/jokes/random'),
-      axios.get<QuoteProps>('https://api.kanye.rest'),
-      axios.get<QuoteProps>('https://type.fit/api/quotes')
+      axios.get<chuckReq>('http://api.icndb.com/jokes/random/10'),
+      axios.get<kanyeReq>('https://api.kanye.rest'),
+      axios.get<wholesomeReq>('https://type.fit/api/quotes'),
+      axios.get<trumpReq>('https://api.whatdoestrumpthink.com/api/v1/quotes/'),
+      axios.get<localQuote>('http://localhost:8001/api/quotes')
     ]).then((all) => {
       setState({
         chuckQuote: all[0].data.value,
         kanyeQuote: all[1].data.quote,
-        wholesomeQuote: all[2].data.text
+        wholesomeQuote: all[2].data,
+        trumpQuote: all[3].data.messages,
+        localQuote: all[4].data
         })
       }).catch((err) => console.log(err));
   }, []);
-
 
   return (
     <div className='container quote'>
