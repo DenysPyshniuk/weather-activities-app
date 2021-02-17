@@ -3,13 +3,9 @@ import { useState } from "react";
 import axios from "axios";
 import "./day_weather.css";
 
-import useWeatherData from '../hooks/useWeatherData'
-
-
 
 interface DayWeatherProps extends WeatherProps<DayWeather> {
   setWeekWeather: (weather: WeekWeather) => void
-  
 }
 
 const DayWeather: React.FC<DayWeatherProps> = (props) => {
@@ -86,5 +82,3 @@ const DayWeather: React.FC<DayWeatherProps> = (props) => {
   );
 };
 export default DayWeather;
-
-// {"coord":{"lon":-123.1193,"lat":49.2497},"weather":[{"id":601,"main":"Snow","description":"snow","icon":"13d"}],"base":"stations","main":{"temp":-0.85,"feels_like":-5.25,"temp_min":-1.11,"temp_max":-0.56,"pressure":1011,"humidity":93},"visibility":2414,"wind":{"speed":3.09,"deg":120},"snow":{"1h":0.75},"clouds":{"all":90},"dt":1613247890,"sys":{"type":1,"id":954,"country":"CA","sunrise":1613229864,"sunset":1613266150},"timezone":-28800,"id":6173331,"name":"Vancouver","cod":200}
