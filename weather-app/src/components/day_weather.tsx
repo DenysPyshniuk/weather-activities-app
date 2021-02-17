@@ -1,13 +1,7 @@
 import { useState } from "react";
 
-import axios from 'axios'
+import axios from "axios";
 import "./day_weather.css";
-
-type post = {
-  method: string,
-  url: string,
-  data: string
-}
 
 const DayWeather = () => {
   const [query, setQuery] = useState("");
@@ -49,15 +43,19 @@ const DayWeather = () => {
   });
 
   const search = async (e: any) => {
-    if (e.key == "Enter" || e.key == 'Return') {
+    if (e.key == "Enter" || e.key == "Return") {
       axios({
-        method: 'post',
-        url: 'http://localhost:8001/api/dayweather',
-        data: {query}
-      }).then(res => {
-        setWeather(res.data.day)
-        // weekdata in res.data.week
-      }).catch(e => console.log(e))
+        method: "post",
+        url: "http://localhost:8001/api/dayweather",
+        data: { query },
+      })
+        .then((res) => {
+          setWeather(res.data.day);
+          // console.log("Current: ", res.data.day);
+          // weekdata in res.data.week
+          // console.log("WEEK: ", res.data.week);
+        })
+        .catch((e) => console.log(e));
       setQuery("");
     }
   };
@@ -112,7 +110,6 @@ const DayWeather = () => {
     </div>
   );
 };
-
 export default DayWeather;
 
 // {"coord":{"lon":-123.1193,"lat":49.2497},"weather":[{"id":601,"main":"Snow","description":"snow","icon":"13d"}],"base":"stations","main":{"temp":-0.85,"feels_like":-5.25,"temp_min":-1.11,"temp_max":-0.56,"pressure":1011,"humidity":93},"visibility":2414,"wind":{"speed":3.09,"deg":120},"snow":{"1h":0.75},"clouds":{"all":90},"dt":1613247890,"sys":{"type":1,"id":954,"country":"CA","sunrise":1613229864,"sunset":1613266150},"timezone":-28800,"id":6173331,"name":"Vancouver","cod":200}
