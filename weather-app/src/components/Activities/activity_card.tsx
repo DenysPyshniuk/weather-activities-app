@@ -4,7 +4,7 @@ import "./activities.css"
 
 const ActivityCard: React.FC<ActivityType> = (props) => {
   
-  // console.log("activityProps:", props)
+
 
   return (
     <li className="activity-list">

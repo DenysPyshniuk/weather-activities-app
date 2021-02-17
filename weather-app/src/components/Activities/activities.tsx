@@ -5,8 +5,13 @@ import axios from 'axios'
 import "./activities.css"
 import ActivityCard from './activity_card'
 
+interface DayWeatherProps<T> {
+  event?: ActivitiesArr
+  weather?: T
+}
 
-const Activities: React.FC<Props> = (props) => {
+const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
+
   const [ bored, setBored ] = useState<iBored>({
     activity: 'ROCK, PAPER, SCISSORS, LIZARD, SPOCK',
     type: 'recreation',
@@ -43,11 +48,6 @@ const Activities: React.FC<Props> = (props) => {
     />
     );
   });
-
-  // console.log(props.event)
-  // [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
-  // 0: {id: 1, weather_id: 4, activity_type: "Consectetuer Adipiscing Elit Consulting", hi_temp: 21, low_temp: 14, …}
-
 
   return (
     <div className='right-group'>
