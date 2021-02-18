@@ -44,7 +44,6 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
       low_temp={activity.low_temp}
       activity_name={activity.activity_name}
       activity_description={activity.activity_description}
-      activity_date={activity.activity_date}
     />
     );
   });

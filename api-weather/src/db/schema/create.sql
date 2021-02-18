@@ -16,13 +16,12 @@ CREATE TABLE weather_stats (
 
 CREATE TABLE activities (
   id SERIAL PRIMARY KEY NOT NULL,
-  weather_id INTEGER REFERENCES weather_stats(id),
+  weather_type VARCHAR(255),
   activity_type VARCHAR(255),
   hi_temp INTEGER,
   low_temp INTEGER,
   activity_name VARCHAR(255),
-  activity_description TEXT,
-  activity_date VARCHAR(255)
+  activity_description TEXT
 );
 
 
