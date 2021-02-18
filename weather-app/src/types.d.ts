@@ -1,3 +1,4 @@
+
 type iBored = {
   activity: string;
   type: string;
@@ -7,6 +8,20 @@ type iBored = {
   key: string;
   accessibility: number;
 };
+
+//handle activity db requests
+type ActivityType = {
+  id: number
+  weather_id: number
+  activity_type: string
+  hi_temp: number
+  low_temp: number
+  activity_name: string
+  activity_description: string
+  activity_date: string
+}[{}]
+
+type ActivitiesArr = ActivityType[{}]
 
 //handles quotes state
 type QuoteProps = {
@@ -39,10 +54,9 @@ type trumpReq = {
   messages: string;
 };
 type localQuote = {
-  id: number;
-  quote: string;
-  author: string;
+  id: number, quote: string, author: string
 }[];
+
 
 //Weather
 type post = {
@@ -65,7 +79,7 @@ interface DayWeather {
     temp_max: number;
     temp_min: number;
     temp: number;
-    feels_like: number
+    feels_like: number;
   };
   name: string;
   sys: {
@@ -84,17 +98,26 @@ interface DayWeather {
     icon: string;
   }[];
   wind: {};
-};
-  
+}
+
 interface WeekWeather {
   current: {};
-  daily: {}[];
+  daily: {
+    temp: {
+      day: number;
+      night: number;
+    };
+    weather: {
+      description: string;
+      icon: string;
+    };
+  }[];
   hourly: {}[];
   lat: number;
   lon: number;
   timezone: string;
   timezone_offset: number;
-};
+}
 
 interface WeatherProps<T> {
   weather?: T;
@@ -104,4 +127,6 @@ interface WeatherProps<T> {
 interface Quotes {
   text: string;
   author: string;
-}
+};
+
+

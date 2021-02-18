@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react'
+import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { render } from 'react-dom';
 import axios from 'axios'
 import "./activities.css"
+import ActivityCard from './activity_card'
 
 interface DayWeatherProps<T> {
+  event?: ActivitiesArr
   weather?: T
 }
 
 const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
-  console.log('Activities', props.weather)
+
   const [ bored, setBored ] = useState<iBored>({
     activity: 'ROCK, PAPER, SCISSORS, LIZARD, SPOCK',
     type: 'recreation',
@@ -29,21 +33,29 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
       setBored(res.data)
     })
   }
+
+  const singleEvent = props.event.map((activity: any) => {
+    return (
+      <ActivityCard
+      key={activity.id}
+      weather_id={activity.weather_id}
+      activity_type={activity.activity_type}
+      hi_temp={activity.hi_temp}
+      low_temp={activity.low_temp}
+      activity_name={activity.activity_name}
+      activity_description={activity.activity_description}
+      activity_date={activity.activity_date}
+    />
+    );
+  });
+
   return (
     <div className='right-group'>
       <div className='activities'>
         Weather Activities
-        <div className='events'>
-          <div className="event-card">
-            Activity 1
-          </div>
-          <div className="event-card">
-            Activity 2
-          </div>
-          <div className="event-card">
-            Activity 3
-          </div>
-        </div>
+        <ul className='events'>          
+          {singleEvent}
+        </ul>
       </div>
       <div className='add-new'>
         <div className='bored-container'>
@@ -77,3 +89,4 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
 
 
 export default Activities
+
