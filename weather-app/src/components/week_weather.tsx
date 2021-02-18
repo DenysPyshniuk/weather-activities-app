@@ -9,25 +9,22 @@ const WeekWeather: React.FC<WeekWeatherProps> = (props) => {
   const forecast = weather?.daily.slice(0, 5).map((oneDayWeather) => (
     <div className="one-day">
       <p>MON</p>
+      <br />
       <p>
-        Day {weather ? Math.round((oneDayWeather.temp as any).day) : "-"}
+        Day {weather ? Math.round(oneDayWeather.temp.day) : "-"}
         <sup>&deg;C</sup>
       </p>
       <p>
-        Night {weather ? Math.round((oneDayWeather.temp as any).night) : "-"}
+        Night {weather ? Math.round(oneDayWeather.temp.night) : "-"}
         <sup>&deg;C</sup>
       </p>
       <br />
       <img
         className="city-icon"
-        src={`https://openweathermap.org/img/wn/${
-          (oneDayWeather.weather as any).icon
-        }@2x.png`}
-        alt={weather ? (oneDayWeather.weather as any).description : "-"}
+        src={`https://openweathermap.org/img/wn/${oneDayWeather.weather[0].icon}@2x.png`}
+        alt={weather ? oneDayWeather.weather[0].description : "-"}
       />
-      <p id="weather-description">
-        {(oneDayWeather.weather as any).description}
-      </p>
+      <p id="weather-description">{oneDayWeather.weather[0].description}</p>
     </div>
   ));
 
