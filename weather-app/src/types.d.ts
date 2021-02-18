@@ -96,7 +96,7 @@ interface WeekWeather {
     weather: {
       description: string;
       icon: string;
-    };
+    }[];
   }[];
   hourly: {}[];
   lat: number;
