@@ -89,7 +89,14 @@ interface DayWeather {
 interface WeekWeather {
   current: {};
   daily: {
-    temp: {};
+    temp: {
+      day: number;
+      night: number;
+    };
+    weather: {
+      description: string;
+      icon: string;
+    };
   }[];
   hourly: {}[];
   lat: number;
