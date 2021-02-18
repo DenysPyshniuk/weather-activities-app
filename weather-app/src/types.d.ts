@@ -100,3 +100,8 @@ interface WeatherProps<T> {
   weather?: T;
   setWeather: (weather: T) => void;
 }
+
+interface Quotes {
+  text: string;
+  author: string;
+}
