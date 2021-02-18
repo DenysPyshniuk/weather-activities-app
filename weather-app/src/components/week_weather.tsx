@@ -5,10 +5,11 @@ interface WeekWeatherProps extends WeatherProps<WeekWeather> {}
 const WeekWeather: React.FC<WeekWeatherProps> = (props) => {
   const { weather } = props;
   console.log("weekweather:", weather);
+  let myDate: Date = new Date();
 
   const forecast = weather?.daily.slice(0, 5).map((oneDayWeather) => (
     <div className="one-day">
-      <p>MON</p>
+      {/* <p>{myDate(oneDayWeather.dt * 1000 - weather.timezone_offset)}</p> */}
       <br />
       <p>
         Day {weather ? Math.round(oneDayWeather.temp.day) : "-"}
