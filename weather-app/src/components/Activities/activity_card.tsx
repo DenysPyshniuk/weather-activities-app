@@ -11,7 +11,7 @@ const ActivityCard: React.FC<ActivityType> = (props) => {
       <div className="event-card">
         <div className="card-header">
           <p>{props.activity_name}</p>
-          <p>{props.activity_date}</p>
+          <p>{props.activity_type}</p>
         </div>
         <div className="card-description">
           <p>{props.activity_description}</p>
