@@ -1,7 +1,10 @@
 .week-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 2rem 2rem;
+  max-width: 90%;
+  align-self: center;
+  overflow-x: scroll;
   /* border: solid #61dafb; */
 }
 
@@ -13,18 +16,19 @@
   padding-inline-start: 0px;
 }
 
-.week-li {
+/* .week-li {
   display: flex;
   justify-content: center;
   margin: 0.1rem;
   width: 5.2rem;
   height: 10rem;
   border: solid #61dafb;
-}
+} */
 
 .one-day {
   display: block;
-  width: 5rem;
+  width: fit-content;
+  height: auto;
   text-align: center;
   padding: 1rem;
   margin: 2px;
