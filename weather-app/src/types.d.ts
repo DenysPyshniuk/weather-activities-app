@@ -88,7 +88,9 @@ interface DayWeather {
 
 interface WeekWeather {
   current: {};
+  timezone_offset: number;
   daily: {
+    dt: number;
     temp: {
       day: number;
       night: number;
