@@ -18,8 +18,11 @@ const Quotes = () => {
   }
   return (
     <div className='container quote'>
-      <h4 className='container-quote-text'>{quote ? quote.text : '-'}</h4>
-      <h4 className='container-quote-text'>Author: {quote ? quote.author : 'anonymous'}</h4>
+      <div>Quote</div>
+      <div>
+        <h4 className='container-quote-text'>{quote ? quote.text : '-'}</h4>
+        <h4 className='container-quote-author'>Author: {quote ? quote.author : 'anonymous'}</h4>
+      </div>
 
       <button
       className='new-quote'

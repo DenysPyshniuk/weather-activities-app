@@ -57,5 +57,8 @@
 }
 button {
   border-radius: 1em;
+  outline: none;
+}
+button:hover {
   background-color: rgba(144, 188, 245, 0.85);
 }
