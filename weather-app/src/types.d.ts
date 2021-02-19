@@ -1,5 +1,5 @@
 
-type iBored = {
+interface iBored {
   activity: string;
   type: string;
   participants: string;
@@ -21,48 +21,6 @@ type ActivityType = {
 }[{}]
 
 type ActivitiesArr = ActivityType[{}]
-
-//handles quotes state
-type QuoteProps = {
-  chuckQuote?: string;
-  kanyeQuote?: string;
-  wholesomeQuote?: {
-    text: string;
-    author: string;
-  }[];
-  trumpQuote?: string;
-  localQuote?: {
-    id: number;
-    quote: string;
-    author: string;
-  }[];
-};
-
-//types for Quote API's
-type chuckReq = {
-  value: string;
-};
-type kanyeReq = {
-  quote: string;
-};
-type wholesomeReq = {
-  text: string;
-  author: string;
-}[];
-type trumpReq = {
-  messages: string;
-};
-type localQuote = {
-  id: number, quote: string, author: string
-}[];
-
-
-//Weather
-type post = {
-  method: string;
-  url: string;
-  data: string;
-};
 
 interface DayWeather {
   base: string;
@@ -125,9 +83,8 @@ interface WeatherProps<T> {
   setWeather: (weather: T) => void;
 }
 
-interface Quotes {
+interface Quote {
   text: string;
   author: string;
-};
-
+}
 

@@ -13,10 +13,7 @@ module.exports = db => {
     // .catch(e => console.log(e))
     requester('https://type.fit/api/quotes', function (error, res, body) {
       const quotes =  JSON.parse(body)
-      const n = quotes.length
-      const rn = Math.floor(Math.random() * n)
-      const quote = quotes[rn]
-      response.json(quote)
+      response.json(quotes)
     })
   })
   return router
