@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { HashRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import { render } from 'react-dom';
 import axios from 'axios'
 import "./activities.css"
 import ActivityCard from './activity_card'
+import { setConstantValue } from 'typescript'
 
 interface DayWeatherProps<T> {
   event?: ActivitiesArr
@@ -11,7 +10,7 @@ interface DayWeatherProps<T> {
 }
 
 const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
-
+  const [event, setEvent] = React.useState<ActivitiesArr>([])
   const [ bored, setBored ] = useState<iBored>({
     activity: 'ROCK, PAPER, SCISSORS, LIZARD, SPOCK',
     type: 'recreation',
@@ -34,7 +33,22 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
     })
   }
 
-  const singleEvent = props.event.map((activity: any) => {
+const filterActivities = (props: any) => {
+  let result = [];
+  const allActivities = props.event
+  const weatherStatus = (props.weather?.weather[0].description).split(" ");
+  for (let activity of allActivities) {
+    let key = (activity.weather_type).toLowerCase();
+    for (let match of weatherStatus) {
+      if (key === match) {
+        result.push(activity)
+      }
+    }
+  }
+  return result;
+}
+
+  const singleEvent = filterActivities(props).map((activity: any) => {
     return (
       <ActivityCard
       key={activity.id}
@@ -47,6 +61,10 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
     />
     );
   });
+
+// console.log(props.weather?.weather[0].description)
+// console.log(props.event[0].weather_type)
+// console.log(props)
 
   return (
     <div className='right-group'>
