@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap');
+@import url('https://fonts.google.com/specimen/Architects+Daughter?selection.family=Architects+Daughter|Arimo:wght@500&preview.text_type=custom');
 
 
 body {
   margin: 0;
-  font-family: 'Arimo';
+  font-family: 'Arimo', 'Architects Daughter';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: linear-gradient(to bottom right, rgb(191, 63, 4), rgb(255, 245, 98));

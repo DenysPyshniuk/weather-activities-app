@@ -5,6 +5,10 @@
   align-items: center;
   height: 90px;
   padding: 1em;
+  font-family: 'Architects Daughter';
+  font-weight: 800;
+
+
 }
 .container {
   display: flex;
@@ -12,10 +16,7 @@
   height: 5%
 }
 .container-quote-text {
-  flex-wrap: wrap;
-  flex-grow: 10;
-  font-weight: 250;
-  font-style: italic;
+  font-weight: 400;
 }
 .container-quote-author {
   display: flex;
