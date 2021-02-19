@@ -4,7 +4,10 @@ import "./quotes.css"
 
 const Quotes = () => {
   const [quote, setQuote] = useState<Quote[]>()
-  let [count, setCount] = useState(0)
+  let [count, setCount] = useState(Math.floor(Math.random() * 1643))
+  if (quote && !quote[count]) {
+    setCount(Math.floor(Math.random() * 1643))
+  }
   useEffect(() => {
     axios.get('http://localhost:8001/api/quotes')
     .then(res => {
