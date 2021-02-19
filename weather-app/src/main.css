@@ -4,17 +4,9 @@
   align-items: center;
   margin: 0;
 }
-body {
-  width: 95%;
-  height: 100vh;
-}
-.container {
-  border: thin;
-  border-color: rgba(0, 123, 255, 0.7);
-  border-style: solid;
-  border-radius: 4px;
-  width: 100%;
-}
+/* .container {
+
+} */
 .main-container {
   width: 95%;
 }
@@ -42,8 +34,8 @@ body {
 }
 .add-new {
   padding: 0 1em;
-  border: thin;
+  /* border: thin;
   border-color: rgba(0, 123, 255, 0.7);
   border-style: solid;
-  border-radius: 4px;
+  border-radius: 4px; */
 }

@@ -7,6 +7,8 @@ import Navbar from "./components/navbar";
 import reportWebVitals from './reportWebVitals';
 import Main from './main'
 
+
+
 ReactDOM.render(
   <React.StrictMode>
     <Main />
