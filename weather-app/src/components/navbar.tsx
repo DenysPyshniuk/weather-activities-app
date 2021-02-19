@@ -1,4 +1,3 @@
-import { getDefaultSettings } from "http2"
 import "./navbar.css"
 
 const Navbar = () => {

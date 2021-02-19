@@ -20,5 +20,11 @@
     "request": "^2.88.2",
     "socket.io": "^3.1.1",
     "ws": "^7.4.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.17",
+    "@babel/core": "^7.12.17",
+    "@babel/node": "^7.12.17",
+    "@babel/preset-env": "^7.12.17"
   }
 }

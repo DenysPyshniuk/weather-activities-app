@@ -1,12 +1,15 @@
 const router = require('express').Router()
 const requester = require('request')
 
+const fixQuery = require('../helpers/query')
+
 // import fetchCurrentWeather from '../helpers/fetchCurrentWeather'
 
 module.exports = id => {
   router.post('/dayweather', (request, response) => {
     const url = "http://api.openweathermap.org/data/2.5/"
-    const dayUrl = url + 'weather?q=' + request.body.query + '&units=metric&appid=' + id
+    const vet = fixQuery(request.body.query)
+    const dayUrl = url + 'weather?q=' + vet + '&units=metric&appid=' + id
     const weather = {}
     
     requester(dayUrl, function (error, res, body) {
