@@ -25,6 +25,7 @@ const weather = require('./routes/weather')
 const activities = require('./routes/activities')
 const quotes = require('./routes/quotes')
 const axiosApi = require('./routes/axios-to-api')
+const newActivity = require('./routes/new-activity')
 
 
 function read(file) {
@@ -50,6 +51,7 @@ module.exports = function application(ENV) {
 
   app.use('/api', weather(db))
   app.use('/api', activities(db))
+  app.use('/api', newActivity(db))
   app.use('/api', quotes(db))
   app.use('/api', axiosApi(process.env.APPID))
 
