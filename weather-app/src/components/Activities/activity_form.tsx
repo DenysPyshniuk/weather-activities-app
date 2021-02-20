@@ -7,7 +7,7 @@ const Form: React.FC<Form> = (props: any) => {
 
     const createNew = async () => {
       axios({
-        method: "put",
+        method: "post",
         url: ("http://localhost:8001/api/new"),
         data: {
           weather_type: props.weather_type,
