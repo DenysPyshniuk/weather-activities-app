@@ -1,18 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap');
-@import url('https://fonts.google.com/specimen/Architects+Daughter?selection.family=Architects+Daughter|Arimo:wght@500&preview.text_type=custom');
-
+@import url("https://fonts.googleapis.com/css2?family=Arimo:wght@500&display=swap");
+@import url("https://fonts.google.com/specimen/Architects+Daughter?selection.family=Architects+Daughter|Arimo:wght@500&preview.text_type=custom");
 
 body {
   margin: 0;
-  font-family: 'Arimo', 'Architects Daughter';
+  font-family: "Arimo", "Architects Daughter";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to bottom right, rgb(191, 63, 4), rgb(255, 245, 98));
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(233, 193, 174),
+    rgb(250, 250, 238)
+  );
   width: 95%;
   height: 100vh;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

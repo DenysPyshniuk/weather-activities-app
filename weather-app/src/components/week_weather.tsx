@@ -11,20 +11,22 @@ const WeekWeather: React.FC<WeekWeatherProps> = (props) => {
       oneDayWeather.dt * 1000 - weather.timezone_offset
     )
       .toString()
-      .slice(0, 3);
+      .slice(0, 10);
     return (
       <div className="one-day">
-        <p>{weekItemDate}</p>
+        <p id="wekkly-date">{weekItemDate}</p>
 
         <br />
-        <p>
-          Day {weather ? Math.round(oneDayWeather.temp.day) : "-"}
-          <sup>&deg;C</sup>
-        </p>
-        <p>
-          Night {weather ? Math.round(oneDayWeather.temp.night) : "-"}
-          <sup>&deg;C</sup>
-        </p>
+        <div className="weather-temp">
+          <p>
+            Day {weather ? Math.round(oneDayWeather.temp.day) : "-"}
+            <sup>&deg;C</sup>
+          </p>
+          <p>
+            Night {weather ? Math.round(oneDayWeather.temp.night) : "-"}
+            <sup>&deg;C</sup>
+          </p>
+        </div>
         <br />
         <img
           className="city-icon"
