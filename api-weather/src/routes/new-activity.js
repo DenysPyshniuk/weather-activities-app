@@ -2,12 +2,25 @@ const router = require('express').Router()
 
 module.exports = db => {
   router.post('/new', (request, response) => {
-    console.log(request.body)
-    // db.query(`
-    // INSERT INTO activities (weather_type, activity_type, hi_temp, low_temp, activity_name, activity_description)
-    // VALUES
-    // ($1, $2, $3, $4, $5, $6);
-    // `)
-  })
+    const arr = [
+      request.body.weather_type, 
+      request.body.activity_type, 
+      request.body.hi_temp,
+      request.body.low_temp,
+      request.body.activity_name,
+      request.body.activity_description
+    ]
+    console.log(arr)
+
+    db.query(`
+    INSERT INTO activities (weather_type, activity_type, hi_temp, low_temp, activity_name, activity_description)
+    VALUES
+    ($1, $2, $3, $4, $5, $6);
+    `, arr)
+    .then(res => {
+      // respond with all fields send back to front to set activities again
+    })
+    .catch(e => console.log)
+    })
   return router
 }
