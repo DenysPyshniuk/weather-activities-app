@@ -9,7 +9,6 @@ interface DayWeatherProps<T> {
 }
 
 const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
-  const [event, setEvent] = React.useState<ActivitiesArr>([])
   const [ bored, setBored ] = useState<iBored>({
     activity: 'ROCK, PAPER, SCISSORS, LIZARD, SPOCK',
     type: 'recreation',
@@ -28,6 +27,7 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
   function newActivity() {
     axios.get<iBored>('http://www.boredapi.com/api/activity/')
     .then(res => {
+      console.log('res:',res)
       setBored(res.data)
     })
   }

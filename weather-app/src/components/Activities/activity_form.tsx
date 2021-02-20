@@ -4,8 +4,8 @@ import axios from "axios";
 
 const Form: React.FC<Form> = (props) => {
   const [event, setEvent] = useState<NewActivity>()
+  console.log(event)
   const current = props.weather ? props.weather.weather[0].main : '-'
-  console.log(props.weather)
 
     const createNew = () => {
       axios({
@@ -21,8 +21,7 @@ const Form: React.FC<Form> = (props) => {
         }
         })
       .then((res) => {
-        console.log(res.data)
-        // setEvent(res.data)
+        props.setEvent(res.data)
       });
       setEvent({
         ...event,
@@ -58,6 +57,7 @@ const Form: React.FC<Form> = (props) => {
               value={event?.activity_type}
               onChange={(e) => setEvent({...event, activity_type: e.target.value})}
               >
+                <option value="" selected disabled hidden>Choose here</option>
                 <option value="Social">Social</option>
                 <option value="Leisure">Leisure</option>
                 <option value="Buy/Sell">Buy/Sell</option>

@@ -12,6 +12,7 @@ interface iBored {
 interface Form {
   weather: any
   value?: any
+  setEvent: any
 }
 
 //handle activity db requests

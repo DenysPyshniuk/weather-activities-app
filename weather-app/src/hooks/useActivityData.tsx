@@ -13,7 +13,8 @@ export default function useActivityData () {
   }, [])
 
   return {
-    event
+    event,
+    setEvent
   }
 
 };
