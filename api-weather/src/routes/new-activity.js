@@ -2,7 +2,7 @@ const router = require('express').Router()
 
 module.exports = db => {
   router.post('/new', (request, response) => {
-    console.log(request.data)
+    console.log(request.body)
     // db.query(`
     // INSERT INTO activities (weather_type, activity_type, hi_temp, low_temp, activity_name, activity_description)
     // VALUES
