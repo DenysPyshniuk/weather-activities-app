@@ -17,9 +17,26 @@ const Main: React.FC = () => {
     setVisual
   } = useActivityData();
   const { dayWeather, setDayWeather, weekWeather, setWeekWeather } = useWeatherData();
+  let c: string = weekWeather ? weekWeather?.current.weather[0].main : ''
+
+  function styleChange(condition: string) {
+    let cond = ''
+    if (condition === "Rain") {
+      cond = 'Rain'
+    } else if (condition === "Clear")  {
+      cond = 'Clear'
+    } else if (condition === "Snow") {
+      cond = 'Snow'
+    } else if (condition === 'Clouds') {
+      cond = 'Cloud'
+    } else {
+      cond = ''
+    }
+    return cond
+  }
 
   return (
-    <body className={""}>
+    <body className={c}>
       <header>
         <Navbar />
       </header>
