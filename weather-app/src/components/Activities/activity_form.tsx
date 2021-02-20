@@ -36,7 +36,6 @@ const Form: React.FC<Form> = (props) => {
   
 
   return (
-    <main className="activity-form">
       <form autoComplete="off" onSubmit={e => e.preventDefault()}>
         <section className="form-left">
           <div className="form-group">
@@ -114,7 +113,6 @@ const Form: React.FC<Form> = (props) => {
         >Submit</button>
       </section>
       </form>
-    </main>
   );
 }
 

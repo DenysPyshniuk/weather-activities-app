@@ -3,9 +3,11 @@ import Quotes from "./components/quotes";
 import Activities from "./components/Activities/activities";
 import WeekWeather from "./components/week_weather";
 import Navbar from "./components/navbar";
+import Form from './components/Activities/activity_form'
 import "./main.css";
 import useActivityData from "./hooks/useActivityData";
 import useWeatherData from './hooks/useWeatherData';
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 
 const Main: React.FC = () => {
   const {
@@ -25,11 +27,34 @@ const Main: React.FC = () => {
           <DayWeather weather={dayWeather} setWeather={setDayWeather} setWeekWeather={setWeekWeather} />
           <WeekWeather weather={weekWeather} setWeather={setWeekWeather} />
         </div>
-          <Activities 
-            event={event}
-            weather={dayWeather}
-          />
-      </div>
+          <BrowserRouter>
+            <div className="activity-panel">
+              <div className="activity-links">
+                <Link to="/">Activities</Link>
+                <Link to="/form">Suggestions?</Link>
+              </div>
+              <Switch>
+                <Route exact path="/form"
+                render={(props) => (
+                  <Form
+                    {...props }
+                    weather={dayWeather}
+                   />
+                  )}
+                />
+                <Route exact path="/"
+                  render={(props) => (
+                    <Activities
+                      {...props }
+                      event={event}
+                      weather={dayWeather}
+                    />
+                  )}
+                />
+              </Switch>
+            </div>
+          </BrowserRouter>
+      </div>        
     </body>
   );
 };

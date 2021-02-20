@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import "./activities.css"
 import ActivityCard from './activity_card'
-import Form from './activity_form'
 
 interface DayWeatherProps<T> {
   event?: ActivitiesArr
@@ -46,6 +45,7 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
     return result;
   }
 
+console.log("props", props)
 
   const singleEvent = filterActivities(props).map((activity: any) => {
     return (
@@ -63,18 +63,11 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
 
   return (
     <div className='right-group'>
-      <div className='activities'>
-          Weather Activities
+   
         <ul className='events'>          
           {singleEvent}
         </ul>
-      </div>
-
-      <div className="activity-form">
-        <Form
-          weather={props.weather}
-        />
-      </div>
+   
 
       <div className='add-new'>
         <div className='bored-container'>
