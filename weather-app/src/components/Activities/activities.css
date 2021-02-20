@@ -1,6 +1,11 @@
 .activities {
-  padding: 1em;
-  height: 500px;
+  padding: 0.5rem;
+  /* height: 500px; */
+}
+
+#activities-paragraph {
+  display: flex;
+  justify-content: center;
 }
 
 .events {
@@ -9,8 +14,9 @@
   justify-content: space-between;
   font-size: 1em;
   height: 90%;
-  padding-top: 1em;
-  max-height: 400px;
+  margin-top: 0.5rem;
+  padding-top: 0rem;
+  max-height: 22rem;
   overflow-y: scroll;
 }
 
@@ -23,7 +29,7 @@
 }
 
 .events::-webkit-scrollbar-thumb {
-  background-color: rgb(236, 220, 220);
+  background-color: #f5f4e8c4;
   /* outline: 1px solid rgb(186, 187, 189); */
   border-radius: 7px;
 }
@@ -52,10 +58,16 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
+  font-weight: bolder;
 }
 .activity-list p {
   margin: 0;
 }
+
+.activities-title {
+  font-weight: bolder;
+}
+
 .card-icons {
   display: flex;
   flex-direction: row;
@@ -68,15 +80,31 @@
   justify-content: space-between;
   align-items: center;
 }
-.add-new {
+
+.first-p,
+.second-p {
+  display: inline;
+  margin: 0.4rem;
+}
+
+.first-p {
+  font-weight: 800;
+}
+
+.second-p {
+  font-style: oblique;
+}
+div.add-new {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1rem;
-  margin-top: -3rem;
-  margin-left: 3rem;
+  justify-content: space-evenly;
+  padding: 0rem 4rem;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+  margin-left: 0rem;
 }
 button {
-  border-radius: 1em;
+  border-radius: 8px;
   outline: none;
 }
 button:hover {
