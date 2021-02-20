@@ -16,29 +16,34 @@ body,
 }
 
 .main-container {
-  margin: 5px;
-  width: 30rem;
+  /* margin: 5px; */
+  width: 100%;
   height: 75%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  border-radius: 20px;
-  background: rgba(144, 188, 245, 0.85);
-  box-shadow: 5px 5px 5px 0px rgba(15, 15, 15, 0.404);
+  /* border-radius: 20px; */
+  padding: 0rem 0rem;
+  /* background: rgba(144, 188, 245, 0.85);
+  box-shadow: 5px 5px 5px 0px rgba(15, 15, 15, 0.404); */
 }
 
+#search {
+  text-align: center;
+}
 .search {
   width: -webkit-fill-available;
-  margin-top: 3%;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-top: 2%;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 1px;
   outline: none;
   padding: 11px 7%;
-  border-radius: 15px;
+  border-radius: 11px;
   border: none;
-  margin-bottom: 5%;
-  background: rgba(250, 250, 250, 0.6);
+  background: rgba(238, 227, 227, 0.6);
+  text-align: center;
 }
 
 .city {
@@ -74,6 +79,10 @@ p {
   background: #ff8c00;
 }
 
+#weather-temp {
+  display: block;
+}
+
 .city-icon {
   margin-top: -10px;
   width: 100px;
@@ -81,6 +90,9 @@ p {
 }
 
 .parent_div {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
   width: 100px;
   height: 100px;
   /* margin-right: 20px; */
@@ -100,15 +112,17 @@ p {
 .info {
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
   align-items: center;
 }
 
 #weather-description {
   margin-top: -15px;
+  font-weight: bolder;
 }
 
 #feels {
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 @media only screen and (max-width: 600px) {

@@ -3,14 +3,13 @@ import { useState } from "react";
 import axios from "axios";
 import "./day_weather.css";
 
-
 interface DayWeatherProps extends WeatherProps<DayWeather> {
-  setWeekWeather: (weather: WeekWeather) => void
+  setWeekWeather: (weather: WeekWeather) => void;
 }
 
 const DayWeather: React.FC<DayWeatherProps> = (props) => {
   const [query, setQuery] = useState<string>();
-  const {weather, setWeather, setWeekWeather } = props
+  const { weather, setWeather, setWeekWeather } = props;
 
   const search = async (e: any) => {
     if (e.key == "Enter" || e.key == "Return") {
@@ -21,7 +20,14 @@ const DayWeather: React.FC<DayWeatherProps> = (props) => {
       })
         .then((res) => {
           setWeather(res.data.day);
+<<<<<<< HEAD
           setWeekWeather(res.data.week)
+=======
+          // console.log("Current: ", res.data.day);
+          // weekdata in res.data.week
+          // console.log("WEEK: ", res.data.week);
+          setWeekWeather(res.data.week);
+>>>>>>> 04ead85486fbe2a0bfd45102f8e2696768f4bb34
         })
         .catch((e) => console.log(e));
       setQuery("");
@@ -30,50 +36,55 @@ const DayWeather: React.FC<DayWeatherProps> = (props) => {
 
   return (
     <div className="main-container">
+      {/* <div id="search"> */}
       <input
         type="text"
         className="search"
-        placeholder="Search..."
+        placeholder="Search...       Vancouver,ca"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyPress={search}
       />
+      {/* </div> */}
       {weather && (
         <div className="city">
           <h2 className="city-name">
-            <span>{weather ? weather.name : '-'}</span>
-            <sup>{weather ? weather.sys.country : '-'}</sup>
+            <span>{weather ? weather.name : "-"}</span>
+            <sup>{weather ? weather.sys.country : "-"}</sup>
           </h2>
+          {/* <div> */}
           <div>
-            <div>
-              <pre>
-                Day {weather ? Math.round(weather.main.temp_max) : '-'}
-                <sup>&deg;C</sup> Night {weather ? Math.round(weather.main.temp_min) : '-'}
-                <sup>&deg;C</sup>
-              </pre>
+            <pre id="weather-temp">
+              Max {weather ? Math.round(weather.main.temp_max) : "-"}
+              <sup>&deg;C</sup> Min{" "}
+              {weather ? Math.round(weather.main.temp_min) : "-"}
+              <sup>&deg;C</sup>
+            </pre>
+          </div>
+          <div className="parent_div">
+            <div className="city-temp">
+              {weather ? Math.round(weather.main.temp) : "-"}
+              <sup>&deg;C</sup>
             </div>
-            <div className="parent_div">
-              <div className="city-temp">
-                {weather ? Math.round(weather.main.temp) : '-'}
-                <sup>&deg;C</sup>
-              </div>
-              <div className="info">
-                <img
-                  className="city-icon"
-                  src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
-                  alt={weather ? weather.weather[0].description : '-'}
-                />
-                <p id="weather-description">{weather ? weather.weather[0].description : '-'}</p>
-              </div>
-            </div>
-            <div id="feels">
-              <pre>
-                Feels like {weather ? Math.round(weather.main.feels_like) : '-'}
-                <sup>&deg;C</sup>
-              </pre>
+            <div className="info">
+              <img
+                className="city-icon"
+                src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
+                alt={weather ? weather.weather[0].description : "-"}
+              />
+              <p id="weather-description">
+                {weather ? weather.weather[0].description : "-"}
+              </p>
             </div>
           </div>
+          <div id="feels">
+            <pre>
+              Feels like {weather ? Math.round(weather.main.feels_like) : "-"}
+              <sup>&deg;C</sup>
+            </pre>
+          </div>
         </div>
+        // </div>
       )}
     </div>
   );

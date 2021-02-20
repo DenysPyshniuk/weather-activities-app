@@ -5,20 +5,48 @@
   align-items: center;
   height: 90px;
   padding: 1em;
-  font-family: 'Architects Daughter';
+  font-family: "Architects Daughter";
   font-weight: 800;
-
-
 }
+
+.quotes-title {
+  position: absolute;
+  left: 6rem;
+  top: 10px;
+  margin: 0.3rem 0rem;
+  font-weight: bolder;
+}
+
+.new-quote {
+  position: absolute;
+  right: 6rem;
+  top: 20px;
+}
+
 .container {
   display: flex;
   flex-direction: row;
-  height: 5%
+  height: 5%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px 2px rgba(15, 15, 15, 0.404);
 }
 .container-quote-text {
   font-weight: 400;
+  margin: 0.1rem;
 }
 .container-quote-author {
   display: flex;
   flex-direction: row-reverse;
+  font-weight: bolder;
+  margin: 0.1rem;
+}
+
+.container-quote {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 8px 2px rgba(15, 15, 15, 0.404);
+  /* margin: 1rem; */
 }

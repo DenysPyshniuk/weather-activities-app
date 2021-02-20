@@ -19,11 +19,11 @@ const Main: React.FC = () => {
   const { dayWeather, setDayWeather, weekWeather, setWeekWeather } = useWeatherData();
 
   return (
-    <body>
+    <body className={""}>
       <header>
         <Navbar />
       </header>
-        <Quotes />
+      <Quotes />
       <div className="main-group">
         <div className="left-group container">
           {/* <Search /> */}

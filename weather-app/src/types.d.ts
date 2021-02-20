@@ -1,4 +1,3 @@
-
 interface iBored {
   activity: string;
   type: string;
@@ -7,7 +6,7 @@ interface iBored {
   link: string;
   key: string;
   accessibility: number;
-};
+}
 
 interface Form {
   weather: any
@@ -18,16 +17,16 @@ interface Form {
 
 //handle activity db requests
 type ActivityType = {
-  id: number
-  weather_type: string
-  activity_type: string
-  hi_temp: number 
-  low_temp: number 
-  activity_name: string
-  activity_description: string
-}[{}]
+  id: number;
+  weather_type: string;
+  activity_type: string;
+  hi_temp: number;
+  low_temp: number;
+  activity_name: string;
+  activity_description: string;
+}[{}];
 
-type ActivitiesArr = ActivityType[{}]
+type ActivitiesArr = ActivityType[{}];
 
 interface DayWeather {
   base: string;
@@ -65,7 +64,11 @@ interface DayWeather {
 }
 
 interface WeekWeather {
-  current: {};
+  current: {
+    weather: {
+      main: string;
+    }[];
+  };
   timezone_offset: number;
   daily: {
     dt: number;
@@ -102,3 +105,4 @@ interface NewActivity {
   hi_temp?: number
   low_temp?: number
 }
+// declare module "*.png";
