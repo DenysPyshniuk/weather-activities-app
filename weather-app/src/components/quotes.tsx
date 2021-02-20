@@ -14,6 +14,10 @@ const Quotes = () => {
       setQuote(res.data)
     }).catch(e => console.log(e))
   }, [])
+
+  if (quote  && quote[count].author === null) {
+    quote[count].author = 'Anonymous'
+  }
   return (
     <div className='container quote'>
       <div>Quote</div>
