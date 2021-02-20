@@ -27,33 +27,13 @@ const Main: React.FC = () => {
           <DayWeather weather={dayWeather} setWeather={setDayWeather} setWeekWeather={setWeekWeather} />
           <WeekWeather weather={weekWeather} setWeather={setWeekWeather} />
         </div>
-          <BrowserRouter>
-            <div className="activity-panel">
-              <div className="activity-links">
-                <Link to="/">Activities</Link>
-                <Link to="/form">Suggestions?</Link>
-              </div>
-              <Switch>
-                <Route exact path="/form"
-                render={(props) => (
-                  <Form
-                    {...props }
-                    weather={dayWeather}
-                   />
-                  )}
-                />
-                <Route exact path="/"
-                  render={(props) => (
-                    <Activities
-                      {...props }
-                      event={event}
-                      weather={dayWeather}
-                    />
-                  )}
-                />
-              </Switch>
-            </div>
-          </BrowserRouter>
+            <Activities 
+              event={event}
+              weather={dayWeather}
+            />
+            <Form
+              weather={dayWeather}
+            />
       </div>        
     </body>
   );

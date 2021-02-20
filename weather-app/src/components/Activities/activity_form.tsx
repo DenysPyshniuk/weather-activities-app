@@ -58,6 +58,7 @@ const Form: React.FC<Form> = (props) => {
               value={event?.activity_type}
               onChange={(e) => setEvent({...event, activity_type: e.target.value})}
               >
+                <option>Select one</option>
                 <option value="Social">Social</option>
                 <option value="Leisure">Leisure</option>
                 <option value="Buy/Sell">Buy/Sell</option>
