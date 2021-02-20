@@ -13,6 +13,7 @@ interface Form {
   weather: any
   value?: any
   setEvent: any
+  setVisual: any
 }
 
 //handle activity db requests

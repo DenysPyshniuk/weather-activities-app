@@ -6,6 +6,7 @@ import ActivityCard from './activity_card'
 interface DayWeatherProps<T> {
   event?: ActivitiesArr
   weather?: T
+  setVisual?: any
 }
 
 const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
@@ -64,10 +65,12 @@ console.log("props", props)
   return (
     <div className='right-group'>
    
-        <ul className='events'>          
-          {singleEvent}
-        </ul>
-   
+      <ul className='events'>          
+        {singleEvent}
+      </ul>
+      <button
+      onClick={() => props.setVisual('New')}
+      >New Suggestion?</button>
 
       <div className='add-new'>
         <div className='bored-container'>

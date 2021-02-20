@@ -4,6 +4,7 @@ import axios from 'axios'
 
 export default function useActivityData () {
   const [event, setEvent] = React.useState([])
+  const [visual, setVisual] = useState<string>('Show')
 
   useEffect(() => {
     axios.get<ActivitiesArr>('http://localhost:8001/api/activities')
@@ -14,7 +15,9 @@ export default function useActivityData () {
 
   return {
     event,
-    setEvent
+    setEvent,
+    visual,
+    setVisual
   }
 
 };

@@ -31,6 +31,7 @@ const Form: React.FC<Form> = (props) => {
         activity_name: '',
         activity_description: '',
       })
+      props.setVisual('Show')
     }
   
 

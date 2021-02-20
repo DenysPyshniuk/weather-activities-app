@@ -12,7 +12,9 @@ import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 const Main: React.FC = () => {
   const {
     event,
-    setEvent
+    setEvent,
+    visual,
+    setVisual
   } = useActivityData();
   const { dayWeather, setDayWeather, weekWeather, setWeekWeather } = useWeatherData();
 
@@ -28,14 +30,16 @@ const Main: React.FC = () => {
           <DayWeather weather={dayWeather} setWeather={setDayWeather} setWeekWeather={setWeekWeather} />
           <WeekWeather weather={weekWeather} setWeather={setWeekWeather} />
         </div>
-          <Activities 
-            event={event}
-            weather={dayWeather}
-          />
-          <Form
+        {visual === 'Show' && <Activities 
+          event={event}
+          weather={dayWeather}
+          setVisual={setVisual}
+          />}
+        {visual === 'New' && <Form
             weather={dayWeather}
             setEvent={setEvent}
-          />
+            setVisual={setVisual}
+          />}
       </div>
     </body>
   );
