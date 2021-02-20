@@ -5,8 +5,9 @@ import axios from "axios";
 const Form: React.FC<Form> = (props) => {
   const [event, setEvent] = useState<NewActivity>()
   const current = props.weather ? props.weather.weather[0].main : '-'
+  console.log(props.weather)
 
-    const createNew = async () => {
+    const createNew = () => {
       axios({
         method: "post",
         url: ("http://localhost:8001/api/new"),
@@ -22,7 +23,15 @@ const Form: React.FC<Form> = (props) => {
       .then((res) => {
         console.log(res.data)
         // setEvent(res.data)
-    });
+      });
+      setEvent({
+        ...event,
+        activity_type: '',
+        hi_temp: Math.round(Number(props.weather.main.temp)),
+        low_temp: Math.round(Number(props.weather.main.temp)),
+        activity_name: '',
+        activity_description: '',
+      })
     }
   
 
@@ -37,6 +46,7 @@ const Form: React.FC<Form> = (props) => {
               name="activity_name"
               type="text"
               placeholder="Activity Name..."
+              value={event?.activity_name}
               onChange={(e) => setEvent({...event, activity_name: e.target.value})}
               />
           </div>
@@ -47,6 +57,7 @@ const Form: React.FC<Form> = (props) => {
               name="activity_type"
               type="text"
               placeholder="Activity Type..."
+              value={event?.activity_type}
               onChange={(e) => setEvent({...event, activity_type: e.target.value})}
               />
           </div>
@@ -56,6 +67,7 @@ const Form: React.FC<Form> = (props) => {
               className="form-activity-description--input"
               name="activity_description"
               placeholder="Describe Activity..."
+              value={event?.activity_description}
               type="text"
               onChange={(e) => setEvent({...event, activity_description: e.target.value})}
             />
@@ -65,6 +77,7 @@ const Form: React.FC<Form> = (props) => {
             <input
               className="form-activity-hi_temp--input"
               name="hi_temp"
+              value={event?.hi_temp}
               type="number"
               onChange={(e) => setEvent({...event, hi_temp: Number(e.target.value)})}
             />
@@ -74,6 +87,7 @@ const Form: React.FC<Form> = (props) => {
             <input
               className="form-activity-low_temp--input"
               name="low_temp"
+              value={event?.low_temp}
               type="number"
               onChange={(e) => setEvent({...event, low_temp: Number(e.target.value)})}
             />

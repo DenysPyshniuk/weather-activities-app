@@ -18,8 +18,8 @@ type ActivityType = {
   id: number
   weather_type: string
   activity_type: string
-  hi_temp: number
-  low_temp: number
+  hi_temp: number 
+  low_temp: number 
   activity_name: string
   activity_description: string
 }[{}]
