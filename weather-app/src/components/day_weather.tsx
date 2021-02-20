@@ -20,14 +20,7 @@ const DayWeather: React.FC<DayWeatherProps> = (props) => {
       })
         .then((res) => {
           setWeather(res.data.day);
-<<<<<<< HEAD
           setWeekWeather(res.data.week)
-=======
-          // console.log("Current: ", res.data.day);
-          // weekdata in res.data.week
-          // console.log("WEEK: ", res.data.week);
-          setWeekWeather(res.data.week);
->>>>>>> 04ead85486fbe2a0bfd45102f8e2696768f4bb34
         })
         .catch((e) => console.log(e));
       setQuery("");
