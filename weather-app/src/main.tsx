@@ -30,7 +30,7 @@ const Main: React.FC = () => {
     } else if (condition === 'Clouds') {
       cond = 'Cloud'
     } else {
-      cond = ''
+      cond = ""
     }
     return cond
   }
