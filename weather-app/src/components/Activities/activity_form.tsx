@@ -52,14 +52,27 @@ const Form: React.FC<Form> = (props) => {
           </div>
           <div className="form-group">
             <label htmlFor="activity_type">Activity Category: </label>
-            <input
-              className="form-activity-type--input"
-              name="activity_type"
-              type="text"
-              placeholder="Activity Type..."
+              <select
+              className="form-control"
+              name="activity_type"  
+              placeholder="Activity Type"
               value={event?.activity_type}
               onChange={(e) => setEvent({...event, activity_type: e.target.value})}
-              />
+              >
+                <option value="Social">Social</option>
+                <option value="Leisure">Leisure</option>
+                <option value="Buy/Sell">Buy/Sell</option>
+                <option value="Nature">Nature</option>
+                <option value="Event">Event</option>
+                <option value="Photography">Photography</option>
+                <option value="Family Fun">Family Fun</option>
+                <option value="Relax">Relax</option>
+                <option value="Food">Food</option>
+                <option value="Arts & Crafts">Arts & Crafts</option>
+                <option value="Gaming">Gaming</option>
+                <option value="Learn">Learn</option>
+                <option value="Volunteer">Volunteer</option>
+              </select>
           </div>
           <div className="form-group">
             <label htmlFor="activity_description">Describe Activity: </label>
@@ -106,3 +119,5 @@ const Form: React.FC<Form> = (props) => {
 }
 
 export default Form;
+
+

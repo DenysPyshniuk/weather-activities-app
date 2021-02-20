@@ -11,6 +11,7 @@ interface iBored {
 
 interface Form {
   weather: any
+  value?: any
 }
 
 //handle activity db requests
@@ -93,7 +94,7 @@ interface Quote {
 }
 
 interface NewActivity {
-  activity_type?: string
+  activity_type?: any
   activity_name?: string
   activity_description?: string
   hi_temp?: number
