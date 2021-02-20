@@ -72,7 +72,7 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
 
       <div className="activity-form">
         <Form
-          weather_type={props.weather?.weather[0].main}
+          weather={props.weather}
         />
       </div>
 

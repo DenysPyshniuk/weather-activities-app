@@ -2,25 +2,21 @@ import { useState } from "react";
 import axios from "axios";
 
 
-const Form: React.FC<Form> = (props: any) => {
-  const [event, setEvent] = useState()
-  const { activity_type,
-          activity_name,
-          activity_description,
-          hi_temp,
-          low_temp } = props
+const Form: React.FC<Form> = (props) => {
+  const [event, setEvent] = useState<NewActivity>()
+  const current = props.weather ? props.weather.weather[0].main : '-'
 
     const createNew = async () => {
       axios({
         method: "post",
         url: ("http://localhost:8001/api/new"),
         data: {
-          weather_type: props.weather_type,
-          activity_type: props.activity_type,
-          hi_temp: props.hi_temp,
-          low_temp: props.low_temp,
-          activity_name: props.activity_name,
-          activity_description: props.activity_description,
+          weather_type: current,
+          activity_type: event?.activity_type,
+          hi_temp: event?.hi_temp,
+          low_temp: event?.low_temp,
+          activity_name: event?.activity_name,
+          activity_description: event?.activity_description,
         }
         })
       .then((res) => {
@@ -41,7 +37,7 @@ const Form: React.FC<Form> = (props: any) => {
               name="activity_name"
               type="text"
               placeholder="Activity Name..."
-              onChange={(e) => setEvent(activity_name)}
+              onChange={(e) => setEvent({...event, activity_name: e.target.value})}
               />
           </div>
           <div className="form-group">
@@ -51,17 +47,17 @@ const Form: React.FC<Form> = (props: any) => {
               name="activity_type"
               type="text"
               placeholder="Activity Type..."
-              onChange={(e) => setEvent(activity_type)}
-            />
+              onChange={(e) => setEvent({...event, activity_type: e.target.value})}
+              />
           </div>
           <div className="form-group">
-          <label htmlFor="activity_description">Describe Activity: </label>
+            <label htmlFor="activity_description">Describe Activity: </label>
             <input
               className="form-activity-description--input"
               name="activity_description"
               placeholder="Describe Activity..."
               type="text"
-              onChange={(e) => setEvent(activity_description)}
+              onChange={(e) => setEvent({...event, activity_description: e.target.value})}
             />
           </div>
           <div className="form-group">
@@ -70,7 +66,7 @@ const Form: React.FC<Form> = (props: any) => {
               className="form-activity-hi_temp--input"
               name="hi_temp"
               type="number"
-              onChange={(e) => setEvent(hi_temp)}
+              onChange={(e) => setEvent({...event, hi_temp: Number(e.target.value)})}
             />
           </div>
           <div className="form-group">
@@ -79,7 +75,7 @@ const Form: React.FC<Form> = (props: any) => {
               className="form-activity-low_temp--input"
               name="low_temp"
               type="number"
-              onChange={(e) => setEvent(low_temp)}
+              onChange={(e) => setEvent({...event, low_temp: Number(e.target.value)})}
             />
           </div>
       </section>
