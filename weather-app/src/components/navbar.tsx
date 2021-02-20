@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <img className="logo" src={logo} alt="logo" />
-      <p> {Date().slice(0, 16)} </p>
+      <p id="todays-date"> {Date().slice(0, 16)} </p>
     </div>
   );
 };
