@@ -9,6 +9,10 @@ interface iBored {
   accessibility: number;
 };
 
+interface Form {
+  
+}
+
 //handle activity db requests
 type ActivityType = {
   id: number
