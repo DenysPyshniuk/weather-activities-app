@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./activities.css";
 import ActivityCard from "./activity_card";
+import { time } from "console";
 
 interface DayWeatherProps<T> {
   event?: ActivitiesArr
@@ -36,19 +37,16 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
   }
 
   const filterActivities = (props: any) => {
-    let result = [];
-    const allActivities = props.event;
     const weatherStatus = props.weather?.weather[0].main;
-    for (let activity of allActivities) {
-      let key = activity.weather_type;
-      if (key === weatherStatus) {
-        result.push(activity);
-      }
-    }
-    return result;
+    console.log("weathercond", weatherStatus)
+    const temp = props.weather?.main.temp
+    console.log('temp',temp)
+    const allActivities = props.event;
+    console.log('activities', allActivities)
+    return allActivities.filter((item: any) => (item.hi_temp >= temp && item.low_temp <= temp && item.weather_type === weatherStatus))
   };
-
-console.log("props", props)
+  console.log(filterActivities(props))
+  // console.log("props", props)
 
   const singleEvent = filterActivities(props).map((activity: any) => {
     return (
