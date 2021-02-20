@@ -71,9 +71,11 @@ console.log("props", props)
           <p className="activities-title">Weather Activities</p>
         </div>
         <ul className="events">{singleEvent}</ul>
-        <button onClick={() => props.setVisual('New')}>
-          New Suggestion?
+        <div>
+          <button onClick={() => props.setVisual('New')}>
+            New Suggestion?
         </button>
+        </div>
       </div>
       <div className="add-new">
         <div className="bored-container">

@@ -108,6 +108,7 @@ const Form: React.FC<Form> = (props) => {
       </section>
       <section className="form-right">
         <h3>Submit Activity</h3>
+        <button onClick={() => props.setVisual('Show')}>Cancel</button>
         <button
           className="button"
           onClick={createNew}
