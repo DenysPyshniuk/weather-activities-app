@@ -10,7 +10,9 @@ interface iBored {
 };
 
 interface Form {
-  
+  activity_name?: string
+  weather_type?: string | undefined
+  event?: string;
 }
 
 //handle activity db requests

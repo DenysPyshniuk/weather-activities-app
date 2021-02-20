@@ -46,7 +46,6 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
     return result;
   }
 
-  console.log(props.event[0].weather_type)
 
   const singleEvent = filterActivities(props).map((activity: any) => {
     return (

@@ -2,7 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 
 
-const Form: React.FC<ActivitiesArr> = (props: any) => {
+const Form: React.FC<Form> = (props: any) => {
   const [event, setEvent] = useState<Form>()
 
     const createNew = async () => {
@@ -11,15 +11,16 @@ const Form: React.FC<ActivitiesArr> = (props: any) => {
         url: ("http://localhost:8001/api/new"),
         data: {
           weather_type: props.weather_type,
-          activity_type: "",
-          hi_temp: "",
-          low_temp: "",
-          activity_name: "",
-          activity_description: "",
+          activity_type: "activity_type",
+          hi_temp: "hi_temp",
+          low_temp: "low_temp",
+          activity_name: "activity_name",
+          activity_description: "activity_description",
         }
         })
-      .then(() => {
-        
+      .then((res) => {
+        console.log(res.data)
+        // setEvent(res.data)
     });
     }
   
