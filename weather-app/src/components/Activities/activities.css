@@ -53,15 +53,38 @@
   justify-content: space-between;
   font-weight: bolder;
 }
+.activity-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1em;
+}
 .activity-list p {
   margin: 0;
 }
-
-.activities-title {
-  font-weight: bold;
-  padding-top: 0.5em;
+.activity-form {
+  width: 90%;
+  padding: 1em;
 }
-
+.form-group {
+  display: flex;
+  padding: 1em;
+  justify-content: space-between;
+}
+.form-activity-input {
+  border: 0;
+  border-bottom: 2px solid black;
+  background: transparent;
+  width: 40%; 
+}
+.form-bottom {
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+  align-items: center;
+  justify-content: space-between;
+}
 .card-icons {
   display: flex;
   flex-direction: row;
