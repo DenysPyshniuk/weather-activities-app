@@ -51,18 +51,22 @@ const Main: React.FC = () => {
           <WeekWeather weather={weekWeather} setWeather={setWeekWeather} />
         </div>
         {visual === "Show" && (
+          // <div className="right-group container">
           <Activities
             event={event}
             weather={dayWeather}
             setVisual={setVisual}
           />
+          // </div>
         )}
         {visual === "New" && (
-          <Form
-            weather={dayWeather}
-            setEvent={setEvent}
-            setVisual={setVisual}
-          />
+          <div className="right-group container">
+            <Form
+              weather={dayWeather}
+              setEvent={setEvent}
+              setVisual={setVisual}
+            />
+          </div>
         )}
       </div>
     </div>
