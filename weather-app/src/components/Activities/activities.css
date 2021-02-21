@@ -79,6 +79,12 @@
   width: 90%;
   padding: 1em;
 }
+.form-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 .form-group {
   display: flex;
   padding: 1em;
