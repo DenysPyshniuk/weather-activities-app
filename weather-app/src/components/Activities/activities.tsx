@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./activities.css";
 import ActivityCard from "./activity_card";
-import { time } from "console";
+
 
 interface DayWeatherProps<T> {
   event?: ActivitiesArr
@@ -43,6 +43,8 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
     return allActivities.filter((item: any) => (item.hi_temp >= temp && item.low_temp <= temp && item.weather_type === weatherStatus))
   };
 
+  const weatherIcon = props.weather?.weather[0].icon;
+
   const singleEvent = filterActivities(props).map((activity: any) => {
     return (
       <ActivityCard
@@ -53,11 +55,11 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
         low_temp={activity.low_temp}
         activity_name={activity.activity_name}
         activity_description={activity.activity_description}
+        weather_icon={weatherIcon}
       />
     );
   });
 
-  console.log("weather:", props.weather)
 
   return (
     <div className="right-group">
@@ -77,15 +79,21 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
             New
           </button>
         </div>
-        <div className="act-new">
+        <div className="bored-info">
+          <div className="bored-desc">
             <p className="first-p">Activity: </p>
             <p className="second-p"> {bored.activity}</p>
-            <br />
+          </div>
+        <div className="bored-footer">
+          <div className="bored-desc">
             <p className="first-p">Category: </p>
             <p className="second-p">{bored.type}</p>
-            <br />
+          </div>
+          <div className="bored-desc">
             <p className="first-p">Participants: </p>
             <p className="second-p">{bored.participants}</p>
+          </div>
+        </div>
         </div>
       </div>
     </div>
