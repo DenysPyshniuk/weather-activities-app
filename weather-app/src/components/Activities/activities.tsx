@@ -4,16 +4,16 @@ import "./activities.css";
 import ActivityCard from "./activity_card";
 
 interface DayWeatherProps<T> {
-  event?: ActivitiesArr
-  weather?: T
-  setVisual?: any
+  event?: ActivitiesArr;
+  weather?: T;
+  setVisual?: any;
 }
 
 const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
-  const [ bored, setBored ] = useState<iBored>({
-    activity: 'ROCK, PAPER, SCISSORS, LIZARD, SPOCK',
-    type: 'recreation',
-    participants: '2',
+  const [bored, setBored] = useState<iBored>({
+    activity: "ROCK, PAPER, SCISSORS, LIZARD, SPOCK",
+    type: "recreation",
+    participants: "2",
     price: 0,
     link: "",
     key: "",
@@ -28,18 +28,22 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
       .catch((e) => console.log(e));
   }, []);
   function newActivity() {
-    axios.get<iBored>('http://www.boredapi.com/api/activity/')
-    .then(res => {
-      console.log('res:',res)
-      setBored(res.data)
-    })
+    axios.get<iBored>("http://www.boredapi.com/api/activity/").then((res) => {
+      console.log("res:", res);
+      setBored(res.data);
+    });
   }
 
   const filterActivities = (props: any) => {
     const weatherStatus = props.weather?.weather[0].main;
-    const temp = props.weather?.main.temp
+    const temp = props.weather?.main.temp;
     const allActivities = props.event;
-    return allActivities.filter((item: any) => (item.hi_temp >= temp && item.low_temp <= temp && item.weather_type === weatherStatus))
+    return allActivities.filter(
+      (item: any) =>
+        item.hi_temp >= temp &&
+        item.low_temp <= temp &&
+        item.weather_type === weatherStatus
+    );
   };
 
   const weatherIcon = props.weather?.weather[0].icon;
@@ -59,15 +63,12 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
     );
   });
 
-
   return (
     <div className="right-group">
       <div className="activities">
         <div className="activities-header">
           <p className="activities-title">Activity Suggestions...</p>
-          <button onClick={() => props.setVisual('New')}>
-            Suggestion?
-          </button>
+          <button onClick={() => props.setVisual("New")}>Suggestion?</button>
         </div>
         <ul className="events">{singleEvent}</ul>
       </div>
@@ -83,16 +84,16 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
             <p className="first-p">Activity: </p>
             <p className="second-p"> {bored.activity}</p>
           </div>
-        <div className="bored-footer">
-          <div className="bored-desc">
-            <p className="first-p">Category: </p>
-            <p className="second-p">{bored.type}</p>
+          <div className="bored-footer">
+            <div className="bored-desc">
+              <p className="first-p">Category: </p>
+              <p className="second-p">{bored.type}</p>
+            </div>
+            <div className="bored-desc">
+              <p className="first-p">Participants: </p>
+              <p className="second-p">{bored.participants}</p>
+            </div>
           </div>
-          <div className="bored-desc">
-            <p className="first-p">Participants: </p>
-            <p className="second-p">{bored.participants}</p>
-          </div>
-        </div>
         </div>
       </div>
     </div>
