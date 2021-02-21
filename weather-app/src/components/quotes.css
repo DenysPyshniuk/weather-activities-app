@@ -18,7 +18,7 @@
 }
 
 .new-quote {
-  position: absolute;
+  /* position: absolute; */
   right: 6rem;
   top: 20px;
 }

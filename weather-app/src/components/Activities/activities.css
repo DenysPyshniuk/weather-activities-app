@@ -11,9 +11,9 @@
   display: flex;
   flex-direction: column;
   font-size: 1em;
-  height: 90%;
+  /* height: 90%; */
   padding-left: 0;
-  max-height: 22rem;
+  max-height: 31.5rem;
   overflow-y: scroll;
 }
 
@@ -94,7 +94,7 @@
   border: 0;
   border-bottom: 2px solid black;
   background: transparent;
-  width: 40%; 
+  width: 40%;
 }
 .form-bottom {
   display: flex;
