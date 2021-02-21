@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./activities.css";
 import ActivityCard from "./activity_card";
-import { time } from "console";
 
 interface DayWeatherProps<T> {
   event?: ActivitiesArr

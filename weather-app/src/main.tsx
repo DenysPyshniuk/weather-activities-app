@@ -7,7 +7,6 @@ import Form from './components/Activities/activity_form'
 import "./main.css";
 import useActivityData from "./hooks/useActivityData";
 import useWeatherData from './hooks/useWeatherData';
-import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 
 const Main: React.FC = () => {
   const {
