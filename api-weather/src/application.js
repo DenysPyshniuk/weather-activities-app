@@ -56,7 +56,6 @@ module.exports = function application(ENV) {
   app.use('/api', axiosApi(process.env.APPID))
 
   if (ENV === 'development') {
-    console.log('Outside promise: ' + ENV)
     Promise.all([
       read(path.resolve(__dirname, `db/schema/create.sql`)),
       read(path.resolve(__dirname, `db/seeds/${ENV}.sql`))

@@ -1,6 +1,6 @@
 import { getDefaultSettings } from "http2";
 import "./navbar.css";
-import logo from "../docs/logo-meteorol-og.png";
+import logo from "../docs/meteorol-OG.png";
 
 const Navbar = () => {
   return (

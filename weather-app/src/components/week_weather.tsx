@@ -4,16 +4,16 @@ interface WeekWeatherProps extends WeatherProps<WeekWeather> {}
 
 const WeekWeather: React.FC<WeekWeatherProps> = (props) => {
   const { weather } = props;
-  console.log("weekweather:", weather);
 
-  const forecast = weather?.daily.map((oneDayWeather) => {
+  const forecast = weather?.daily.map((oneDayWeather, i) => {
     const weekItemDate = new Date(
       oneDayWeather.dt * 1000 - weather.timezone_offset
     )
       .toString()
       .slice(0, 10);
+
     return (
-      <div className="one-day">
+      <div key={i} className="one-day">
         <p id="wekkly-date">{weekItemDate}</p>
 
         <br />

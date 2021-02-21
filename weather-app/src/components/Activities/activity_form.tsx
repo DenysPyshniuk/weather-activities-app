@@ -1,10 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
+import "./activities.css";
 
 
 const Form: React.FC<Form> = (props) => {
   const [event, setEvent] = useState<NewActivity>()
-  console.log(event)
   const current = props.weather ? props.weather.weather[0].main : '-'
 
     const createNew = () => {
@@ -21,7 +21,11 @@ const Form: React.FC<Form> = (props) => {
         }
         })
       .then((res) => {
-        props.setEvent(res.data)
+        if (!res.data) {
+          console.log(res)
+        } else {
+          props.setEvent(res.data)
+        }
       });
       setEvent({
         ...event,
@@ -36,12 +40,16 @@ const Form: React.FC<Form> = (props) => {
   
 
   return (
+    <section className="activity-form">
       <form autoComplete="off" onSubmit={e => e.preventDefault()}>
-        <section className="form-left">
+        <div className="form-header">
+          <h3>New Activity...</h3>
+          <button onClick={() => props.setVisual('Show')}>Cancel</button>
+        </div>
           <div className="form-group">
             <label htmlFor="activity_name">Activity: </label>
             <input
-              className="form-activity-name--input"
+              className="form-activity-input"
               name="activity_name"
               type="text"
               placeholder="Activity Name..."
@@ -75,9 +83,9 @@ const Form: React.FC<Form> = (props) => {
               </select>
           </div>
           <div className="form-group">
-            <label htmlFor="activity_description">Describe Activity: </label>
+            <label htmlFor="activity_description">Activity Description: </label>
             <input
-              className="form-activity-description--input"
+              className="form-activity-input"
               name="activity_description"
               placeholder="Describe Activity..."
               value={event?.activity_description}
@@ -86,35 +94,36 @@ const Form: React.FC<Form> = (props) => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="hi_temp">Set Temp High: </label>
+            <label htmlFor="hi_temp">Set High Temperature: </label>
             <input
-              className="form-activity-hi_temp--input"
+              className="form-activity-input"
               name="hi_temp"
               value={event?.hi_temp}
               type="number"
+              placeholder="eg. 25"
               onChange={(e) => setEvent({...event, hi_temp: Number(e.target.value)})}
             />
           </div>
           <div className="form-group">
-          <label htmlFor="low_temp">Set Temp Low: </label>
+          <label htmlFor="low_temp">Set Low Temperature: </label>
             <input
-              className="form-activity-low_temp--input"
+              className="form-activity-input"
               name="low_temp"
               value={event?.low_temp}
               type="number"
+              placeholder="eg. -2"
               onChange={(e) => setEvent({...event, low_temp: Number(e.target.value)})}
             />
           </div>
-      </section>
-      <section className="form-right">
+      <section className="form-bottom">
         <h3>Submit Activity</h3>
-        <button onClick={() => props.setVisual('Show')}>Cancel</button>
         <button
           className="button"
           onClick={createNew}
         >Submit</button>
       </section>
       </form>
+    </section>
   );
 }
 

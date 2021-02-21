@@ -36,19 +36,13 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
   }
 
   const filterActivities = (props: any) => {
-    let result = [];
-    const allActivities = props.event;
     const weatherStatus = props.weather?.weather[0].main;
-    for (let activity of allActivities) {
-      let key = activity.weather_type;
-      if (key === weatherStatus) {
-        result.push(activity);
-      }
-    }
-    return result;
+    const temp = props.weather?.main.temp
+    const allActivities = props.event;
+    return allActivities.filter((item: any) => (item.hi_temp >= temp && item.low_temp <= temp && item.weather_type === weatherStatus))
   };
 
-console.log("props", props)
+  const weatherIcon = props.weather?.weather[0].icon;
 
   const singleEvent = filterActivities(props).map((activity: any) => {
     return (
@@ -60,41 +54,45 @@ console.log("props", props)
         low_temp={activity.low_temp}
         activity_name={activity.activity_name}
         activity_description={activity.activity_description}
+        weather_icon={weatherIcon}
       />
     );
   });
 
+
   return (
     <div className="right-group">
       <div className="activities">
-        <div id="activities-paragraph">
-          <p className="activities-title">Weather Activities</p>
+        <div className="activities-header">
+          <p className="activities-title">Activity Suggestions...</p>
+          <button onClick={() => props.setVisual('New')}>
+            Suggestion?
+          </button>
         </div>
         <ul className="events">{singleEvent}</ul>
-        <div>
-          <button onClick={() => props.setVisual('New')}>
-            New Suggestion?
-        </button>
-        </div>
       </div>
       <div className="add-new">
         <div className="bored-container">
-          <h4>ARE YOU BORED? DO THIS!</h4>
+          <h3>ARE YOU BORED? DO THIS!</h3>
           <button className="button" onClick={newActivity}>
             New
           </button>
         </div>
-        <div className="act-new">
-          <div>
+        <div className="bored-info">
+          <div className="bored-desc">
             <p className="first-p">Activity: </p>
             <p className="second-p"> {bored.activity}</p>
-            <br />
+          </div>
+        <div className="bored-footer">
+          <div className="bored-desc">
             <p className="first-p">Category: </p>
             <p className="second-p">{bored.type}</p>
-            <br />
+          </div>
+          <div className="bored-desc">
             <p className="first-p">Participants: </p>
             <p className="second-p">{bored.participants}</p>
           </div>
+        </div>
         </div>
       </div>
     </div>

@@ -33,21 +33,28 @@
 .container-quote-text {
   font-weight: 400;
   margin: 0.1rem;
+  font-style: italic;
+  text-align: center;
+  padding: 0 1em;
+  width: 100%;
 }
 .container-quote-author {
-  display: flex;
-  flex-direction: row-reverse;
-  font-weight: bolder;
+  font-size: medium;
   margin: 0.1rem;
+  text-align: center;
 }
-
 .container-quote {
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-  height: 5rem;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 10px;
   box-shadow: 0px 0px 8px 2px rgba(15, 15, 15, 0.404);
-  margin: 0rem 4rem;
+  height: 70px;
+}
+.quote-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 0.5em;
+}
+.new-quote {
+  margin: 0 0.5em;
 }

@@ -10,8 +10,7 @@ module.exports = db => {
       request.body.activity_name,
       request.body.activity_description
     ]
-    console.log(arr)
-    if (request.body.low_temp <= request.body.hi_temp) {
+    if (request.body.low_temp <= request.body.hi_temp && request.body.activity_type && request.body.activity_name && request.body.activity_name) {
 
       db.query(`
       INSERT INTO activities (weather_type, activity_type, hi_temp, low_temp, activity_name, activity_description)
@@ -22,11 +21,12 @@ module.exports = db => {
         db.query(` SELECT * FROM activities;`)
         .then(res => {
           const activities = res.rows
-          console.log(activities)
           response.json(res.rows)
         })
       })
       .catch(e => console.log)
+    }else {
+      response.json('')
     }
   })
   return router
