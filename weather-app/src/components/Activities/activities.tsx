@@ -38,15 +38,10 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
 
   const filterActivities = (props: any) => {
     const weatherStatus = props.weather?.weather[0].main;
-    console.log("weathercond", weatherStatus)
     const temp = props.weather?.main.temp
-    console.log('temp',temp)
     const allActivities = props.event;
-    console.log('activities', allActivities)
     return allActivities.filter((item: any) => (item.hi_temp >= temp && item.low_temp <= temp && item.weather_type === weatherStatus))
   };
-  console.log(filterActivities(props))
-  // console.log("props", props)
 
   const singleEvent = filterActivities(props).map((activity: any) => {
     return (

@@ -4,7 +4,6 @@ interface WeekWeatherProps extends WeatherProps<WeekWeather> {}
 
 const WeekWeather: React.FC<WeekWeatherProps> = (props) => {
   const { weather } = props;
-  console.log("weekweather:", weather);
 
   const forecast = weather?.daily.map((oneDayWeather, i) => {
     const weekItemDate = new Date(

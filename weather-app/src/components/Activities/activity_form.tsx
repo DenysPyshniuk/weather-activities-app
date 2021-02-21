@@ -4,7 +4,6 @@ import axios from "axios";
 
 const Form: React.FC<Form> = (props) => {
   const [event, setEvent] = useState<NewActivity>()
-  console.log(event)
   const current = props.weather ? props.weather.weather[0].main : '-'
 
     const createNew = () => {
@@ -21,7 +20,11 @@ const Form: React.FC<Form> = (props) => {
         }
         })
       .then((res) => {
-        props.setEvent(res.data)
+        if (!res.data) {
+          console.log(res)
+        } else {
+          props.setEvent(res.data)
+        }
       });
       setEvent({
         ...event,
