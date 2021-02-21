@@ -62,28 +62,27 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
     );
   });
 
+  console.log("weather:", props.weather)
+
   return (
     <div className="right-group">
       <div className="activities">
-        <div id="activities-paragraph">
-          <p className="activities-title">Weather Activities</p>
+        <div className="activities-header">
+          <p className="activities-title">Activity Suggestions...</p>
+          <button onClick={() => props.setVisual('New')}>
+            Suggestion?
+          </button>
         </div>
         <ul className="events">{singleEvent}</ul>
-        <div>
-          <button onClick={() => props.setVisual('New')}>
-            New Suggestion?
-        </button>
-        </div>
       </div>
       <div className="add-new">
         <div className="bored-container">
-          <h4>ARE YOU BORED? DO THIS!</h4>
+          <h3>ARE YOU BORED? DO THIS!</h3>
           <button className="button" onClick={newActivity}>
             New
           </button>
         </div>
         <div className="act-new">
-          <div>
             <p className="first-p">Activity: </p>
             <p className="second-p"> {bored.activity}</p>
             <br />
@@ -92,7 +91,6 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
             <br />
             <p className="first-p">Participants: </p>
             <p className="second-p">{bored.participants}</p>
-          </div>
         </div>
       </div>
     </div>
