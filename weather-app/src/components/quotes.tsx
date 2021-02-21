@@ -20,22 +20,19 @@ const Quotes = () => {
   }
   return (
     <div className="container-quote">
-      <div className="quotes-title">
-        <p className="quotes-title">Quotes:</p>
-      </div>
-      <div>
+      <div className="quote-header">
         <h4 className="container-quote-text">
           " {quote ? quote[count].text : "-"} "
         </h4>
+        <button className="new-quote" onClick={() => setCount((count += 1))}>
+        {" "}New{" "}
+        </button>
+      </div>
+      <div className="quote-footer">
         <h4 className="container-quote-author">
-          Author: {quote ? quote[count].author : "-"}
+          - {quote ? quote[count].author : "-"}
         </h4>
       </div>
-
-      <button className="new-quote" onClick={() => setCount((count += 1))}>
-        {" "}
-        New{" "}
-      </button>
     </div>
   );
 };
