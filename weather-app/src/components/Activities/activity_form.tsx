@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import "./activities.css";
 
 
 const Form: React.FC<Form> = (props) => {
@@ -41,7 +42,7 @@ const Form: React.FC<Form> = (props) => {
   return (
     <section className="activity-form">
       <form autoComplete="off" onSubmit={e => e.preventDefault()}>
-        <div className="activity-header">
+        <div className="form-header">
           <h3>New Activity...</h3>
           <button onClick={() => props.setVisual('Show')}>Cancel</button>
         </div>
