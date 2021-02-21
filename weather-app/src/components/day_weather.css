@@ -1,32 +1,16 @@
-/* html,
-body,
-#root {
-  font: 0.9rem sans-serif;
-  background: #0a1f44;
-  color: #1e2432;
-  height: 100%;
-  margin: 0;
-} */
-
 .main-container {
-  /* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.418)),
-    url("https://hdwallpaper20.com/wp-content/uploads/2017/07/wallpaper-wp4001752.jpg"); */
   background-size: cover;
   background-position: center;
 }
 
 .main-container {
-  /* margin: 5px; */
   width: 100%;
   height: 75%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  /* border-radius: 20px; */
   padding: 0rem 0rem;
-  /* background: rgba(144, 188, 245, 0.85);
-  box-shadow: 5px 5px 5px 0px rgba(15, 15, 15, 0.404); */
 }
 
 #search {
@@ -34,15 +18,17 @@ body,
 }
 .search {
   width: -webkit-fill-available;
+  height: 3rem;
+  font-size: x-large;
   margin-top: 2%;
   margin-left: 25%;
   margin-right: 25%;
-  margin-bottom: 1px;
+  margin-bottom: 0.1rem;
   outline: none;
-  padding: 11px 7%;
+  padding: 11px;
   border-radius: 11px;
   border: none;
-  background: rgba(238, 227, 227, 0.6);
+  background: rgba(250, 244, 244, 0.6);
   text-align: center;
 }
 
@@ -53,7 +39,6 @@ body,
   justify-content: center;
   flex-direction: column;
   padding-top: 2px;
-  /* padding: 40px 8%; */
   border-radius: 20px;
 }
 
@@ -81,6 +66,8 @@ p {
 
 #weather-temp {
   display: block;
+  font-size: larger;
+  font-weight: bolder;
 }
 
 .city-icon {
@@ -95,34 +82,31 @@ p {
   flex-direction: row;
   width: 100px;
   height: 100px;
-  /* margin-right: 20px; */
-  /* float: left; */
 }
 
 .city-temp {
   font-size: 5rem;
   font-weight: bold;
-  margin-top: 10px;
+  margin-top: 1rem;
   color: #1e2432;
   text-align: center;
-  margin-right: 40px;
+  margin-right: 4rem;
   float: left;
 }
 
 .info {
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
-  align-items: center;
-}
-
-#weather-description {
-  margin-top: -15px;
+  text-align: center;
+  margin-top: 1rem;
   font-weight: bolder;
+  align-items: center;
 }
 
 #feels {
   margin-bottom: 1rem;
+  font-size: larger;
+  font-weight: bolder;
 }
 
 @media only screen and (max-width: 600px) {

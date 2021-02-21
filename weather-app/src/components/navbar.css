@@ -5,7 +5,7 @@
   align-items: center;
   padding: 0rem 0rem;
   width: 100%;
-  height: 4em;
+  height: 6rem;
   overflow: hidden;
 }
 .nav-right {
@@ -21,15 +21,15 @@
 }
 
 .logo {
-  /* position: relative;
-  float: left; */
-  width: 18rem;
-  height: 4rem;
+  margin-left: 2rem;
+  width: 23rem;
+  height: 5rem;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #todays-date {
+  margin-right: 2rem;
   font-weight: bolder;
 }
