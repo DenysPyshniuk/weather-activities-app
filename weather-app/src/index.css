@@ -17,6 +17,7 @@ body {
     rgb(133, 52, 15),
     rgb(250, 250, 238)
   );
+  min-height: 100vh;
 }
 
 .Clear {
@@ -25,6 +26,7 @@ body {
     rgb(255, 231, 206),
     rgb(246, 246, 205)
   );
+  min-height: 100vh;
 }
 
 .Rain {
@@ -33,6 +35,7 @@ body {
     rgb(26, 39, 156),
     rgb(243, 243, 228)
   );
+  min-height: 100vh;
 }
 
 .Clouds {
@@ -41,6 +44,7 @@ body {
     rgb(45, 59, 104),
     rgb(243, 243, 228)
   );
+  min-height: 100vh;
 }
 
 .Snow {
@@ -49,6 +53,7 @@ body {
     rgb(255, 255, 255),
     rgb(255, 255, 253)
   );
+  min-height: 100vh;
 }
 
 code {
