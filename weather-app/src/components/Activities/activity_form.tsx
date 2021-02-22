@@ -1,6 +1,8 @@
 import { useState } from "react";
 import axios from "axios";
 import "./activities.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWindowClose, faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
 
 const Form: React.FC<Form> = (props) => {
@@ -44,7 +46,7 @@ const Form: React.FC<Form> = (props) => {
       <form autoComplete="off" onSubmit={e => e.preventDefault()}>
         <div className="form-header">
           <h3>New Activity...</h3>
-          <button onClick={() => props.setVisual('Show')}>Cancel</button>
+          <button onClick={() => props.setVisual('Show')}><FontAwesomeIcon icon={faWindowClose} /></button>
         </div>
           <div className="form-group">
             <label htmlFor="activity_name">Activity: </label>
@@ -120,7 +122,7 @@ const Form: React.FC<Form> = (props) => {
         <button
           className="button"
           onClick={createNew}
-        >Submit</button>
+        ><FontAwesomeIcon icon={faPaperPlane} /></button>
       </section>
       </form>
     </section>
