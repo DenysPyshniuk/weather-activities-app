@@ -10,11 +10,11 @@ export default function useWeatherData() {
       url: "http://localhost:8001/api/dayweather",
       data: { query: 'Vancouver' },
     })
-      .then((res: any) => {
+      .then((res) => {
         setDayWeather(res.data.day);
         setWeekWeather(res.data.week)
       })
-      .catch((e: any) => console.log(e));
+      .catch((e) => console.log(e));
   }, [])
 
 

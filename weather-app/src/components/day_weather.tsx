@@ -12,7 +12,7 @@ const DayWeather: React.FC<DayWeatherProps> = (props) => {
   const [query, setQuery] = useState<string>();
   const { weather, setWeather, setWeekWeather } = props;
 
-  const search = async (e: any) => {
+  const search = (e: any) => {
     if (e.key == "Enter" || e.key == "Return") {
       axios({
         method: "post",
@@ -20,8 +20,10 @@ const DayWeather: React.FC<DayWeatherProps> = (props) => {
         data: { query },
       })
         .then((res) => {
-          setWeather(res.data.day);
-          setWeekWeather(res.data.week);
+          if (res.data) {
+            setWeather(res.data.day);
+            setWeekWeather(res.data.week);
+          }
         })
         .catch((e) => console.log(e));
       setQuery("");

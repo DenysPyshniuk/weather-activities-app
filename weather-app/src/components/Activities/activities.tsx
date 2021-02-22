@@ -14,14 +14,13 @@ interface DayWeatherProps<T> {
 
 const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
   //Filter activites by MAIN weather type && hi/low temperature
-  const filterActivities = (props: any) => {
+  const filterActivities = (props: DayWeatherProps<DayWeather>) => {
     const weatherStatus = props.weather?.weather[0].main;
-    const temp = props.weather?.main.temp;
     const allActivities = props.event;
     return allActivities.filter(
-      (item: any) =>
-        item.hi_temp >= temp &&
-        item.low_temp <= temp &&
+      (item: Temp) =>
+        (item.hi_temp >= (props.weather ? props.weather?.main.temp : 15)) &&
+        (item.low_temp <= (props.weather ? props.weather?.main.temp : 0)) &&
         item.weather_type === weatherStatus
     );
   };
@@ -30,7 +29,7 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
   const weatherIcon = props.weather?.weather[0].icon;
 
   // Create a new array of filtered activities
-  const singleEvent = filterActivities(props).map((activity: any) => {
+  const singleEvent = filterActivities(props).map((activity: ActivityType) => {
     return (
       <ActivityCard
         key={activity.id}

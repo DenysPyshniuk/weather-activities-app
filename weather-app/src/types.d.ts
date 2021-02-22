@@ -10,7 +10,6 @@ interface iBored {
 
 interface Form {
   weather?: DayWeather;
-  value?: any;
   setEvent: setEvent;
   setVisual: setVisial;
 }
@@ -99,9 +98,15 @@ interface Quote {
 }
 
 interface NewActivity {
-  activity_type?: any;
+  activity_type?: string;
   activity_name?: string;
   activity_description?: string;
   hi_temp?: number;
   low_temp?: number;
+}
+
+interface Temp {
+  hi_temp: number;
+  low_temp: number;
+  weather_type: string;
 }
