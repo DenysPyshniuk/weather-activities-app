@@ -12,10 +12,14 @@
   border: none;
   outline: none;
   background: none;
-  background: white;  
-  border: 3px ridge rgba(212, 173, 179, 0.85);
+  background: #f5f4e8c4;  
+  border: 3px ridge rgba(255,255,255,.5);
   border-radius: 30%;
   padding: 0.3em 0.5em;
+}
+.activities-header button:hover {
+  background: white;
+  transition: all 0.3s ease;
 }
 .events {
   display: flex;
@@ -42,7 +46,7 @@
   flex-direction: row;
   width: 80%;
   height: 9em;
-  border: 4px outset rgba(212, 173, 179, 0.85);
+  border: 4px outset rgba(255,255,255,.5);
   box-shadow: 0px 0px 7px 1px rgba(15, 15, 15, 0.404);
   border-radius: 20px;
   margin: 0.5em;
@@ -78,7 +82,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  font-size: x-small;
+  font-size: small;
   align-items: flex-end;
   align-content: flex-end;
   height: 20%;
@@ -88,7 +92,8 @@
   font-size: large;
   font-weight: bold;
   font-style: italic;
-  text-shadow: 1px 1px rgba(212, 173, 179, 0.85);
+  color: Black;
+  text-shadow: 2px 2px rgba(255,255,255,.5);
 }
 .activity-list p {
   margin: 0;
@@ -143,12 +148,15 @@
 .activity-form button {
   border: none;
   outline: none;
-  background: none;
-  background: white;  
-  border: 3px ridge black;
+  background: #f5f4e8c4;  
+  border: 3px ridge rgba(255,255,255,.5);
   /* border: 3px ridge rgba(212, 173, 179, 0.85); */
   border-radius: 30%;
   padding: 0.3em 0.5em;
+}
+.activity-form button:hover {
+  background-color: white;
+  transition: all 0.3s ease;
 }
 .weather-icon {
   height: 40px;
@@ -180,7 +188,7 @@
   margin: 0 1em;
   font-size: small;
   background-color: #f5f4e8c4;
-  border: 3px ridge rgba(212, 173, 179, 0.85);
+  border: 3px ridge rgba(255,255,255,.5);
   border-radius: 20px;
   height: 120px;
 }
@@ -198,16 +206,13 @@
 .bored-container button {
   border: none;
   outline: none;
-  background: white;  
-  border: 3px ridge rgba(212, 173, 179, 0.85);
+  background: #f5f4e8c4;  
+  border: 3px ridge rgba(255,255,255,.5);
   border-radius: 30%;
   padding: 0.5em;
 }
 
-/* button {
-  border-radius: 8px;
-  outline: none;
+.bored-container button:hover {
+  background-color: white;
+  transition: all 0.3s ease;
 }
-button:hover {
-  background-color: rgba(144, 188, 245, 0.85);
-} */

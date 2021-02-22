@@ -17,12 +17,6 @@
   font-weight: bolder;
 }
 
-.new-quote {
-  /* position: absolute; */
-  right: 6rem;
-  top: 20px;
-}
-
 .container-quote-text {
   font-weight: 400;
   margin: auto;
@@ -32,7 +26,7 @@
   background-color: #f5f4e8c4;
   height: 35px;
   width: 80%;
-  border: 2px solid rgba(212, 173, 179, 0.85);
+  border: 3px ridge rgba(255,255,255,.5);
   border-radius: 10px;
 }
 .container-quote-author {
@@ -40,26 +34,36 @@
   margin: 0.1rem;
   text-align: center;
   color: black;
-  /* text-shadow: 1px 1px white; */
+  background-color: #f5f4e8c4;
+  display: inline-block;
+  border: 3px ridge rgba(255,255,255,.5);
+  padding: 0 2px;
 }
 .container-quote {
   padding: 0.5rem;
   border-radius: 10px;
   height: 70px;
   margin: 0 2em;
-  
 }
 .quote-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+.quote-footer {
+  display: flex;
+  justify-content: center;
+}
 .new-quote {
   border: none;
   outline: none;
-  background: white;
-  border: 3px ridge rgba(212, 173, 179, 0.85);
+  background: #f5f4e8c4;
+  border: 3px ridge rgba(255,255,255,.5);
   border-radius: 30%;
   padding: 0.5em;
   max-height: 32px;
+}
+.new-quote:hover {
+  background: white;
+  transition: all 0.3s ease;
 }
