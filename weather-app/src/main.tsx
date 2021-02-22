@@ -9,7 +9,16 @@ import useActivityData from "./hooks/useActivityData";
 import useWeatherData from "./hooks/useWeatherData";
 
 const Main: React.FC = () => {
-  const { event, setEvent, visual, setVisual } = useActivityData();
+  const { 
+    event,
+    setEvent, 
+    visual, 
+    setVisual,
+    bored,
+    setBored,
+    newActivity  
+  } = useActivityData();
+
   const {
     dayWeather,
     setDayWeather,
@@ -53,6 +62,8 @@ const Main: React.FC = () => {
         {visual === "Show" && (
           <Activities
             event={event}
+            bored={bored}
+            newActivity={newActivity}
             weather={dayWeather}
             setVisual={setVisual}
           />
