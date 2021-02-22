@@ -12,8 +12,8 @@ const DayWeather: React.FC<DayWeatherProps> = (props) => {
   const [query, setQuery] = useState<string>();
   const { weather, setWeather, setWeekWeather } = props;
 
-  const search = (e: any) => {
-    if (e.key == "Enter" || e.key == "Return") {
+  const search = (e: Search) => {
+    if (e.key === "Enter" || e.key === "Return") {
       axios({
         method: "post",
         url: "http://localhost:8001/api/dayweather",

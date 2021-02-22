@@ -110,3 +110,15 @@ interface Temp {
   low_temp: number;
   weather_type: string;
 }
+
+interface DayWeatherProps<T> {
+  event?: ActivitiesArr;
+  weather?: T;
+  setVisual?: setVisual;
+  bored?: iBored;
+  newActivity?: () => void;
+}
+
+interface Search {
+  key: string
+}

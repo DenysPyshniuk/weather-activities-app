@@ -4,13 +4,7 @@ import ActivityCard from "./activity_card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faSyncAlt } from "@fortawesome/free-solid-svg-icons";
 
-interface DayWeatherProps<T> {
-  event?: ActivitiesArr;
-  weather?: T;
-  setVisual?: any;
-  bored?: iBored;
-  newActivity?: () => void;
-}
+
 
 const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
   //Filter activites by MAIN weather type && hi/low temperature
