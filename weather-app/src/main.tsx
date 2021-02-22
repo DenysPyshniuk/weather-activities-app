@@ -44,7 +44,7 @@ const Main: React.FC = () => {
   }
 
   return (
-    <div className={c}>
+    <div className={styleChange(c)}>
       <header>
         <Navbar />
       </header>
