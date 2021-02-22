@@ -37,7 +37,8 @@
   background-color: #f5f4e8c4;
   display: inline-block;
   border: 2px ridge rgba(255,255,255,.5);
-  padding: 0 2px;
+  border-radius: 10px;
+  padding: 0 10px;
 }
 .container-quote {
   padding: 0.5rem;
