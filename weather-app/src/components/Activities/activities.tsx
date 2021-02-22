@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
 import "./activities.css";
 import "../../main.css";
 import ActivityCard from "./activity_card";
@@ -10,33 +8,12 @@ interface DayWeatherProps<T> {
   event?: ActivitiesArr;
   weather?: T;
   setVisual?: any;
+  bored?: iBored;
+  newActivity?: () => void;
 }
 
 const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
-  const [bored, setBored] = useState<iBored>({
-    activity: "ROCK, PAPER, SCISSORS, LIZARD, SPOCK",
-    type: "recreation",
-    participants: "2",
-    price: 0,
-    link: "",
-    key: "",
-    accessibility: 0,
-  });
-  useEffect(() => {
-    axios
-      .get<iBored>("http://www.boredapi.com/api/activity/")
-      .then((res) => {
-        setBored(res.data);
-      })
-      .catch((e) => console.log(e));
-  }, []);
-  function newActivity() {
-    axios.get<iBored>("http://www.boredapi.com/api/activity/").then((res) => {
-      console.log("res:", res);
-      setBored(res.data);
-    });
-  }
-
+  //Filter activites by MAIN weather type && hi/low temperature
   const filterActivities = (props: any) => {
     const weatherStatus = props.weather?.weather[0].main;
     const temp = props.weather?.main.temp;
@@ -49,8 +26,10 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
     );
   };
 
+  // Capture current weather state for icon on all cards
   const weatherIcon = props.weather?.weather[0].icon;
 
+  // Create a new array of filtered activities
   const singleEvent = filterActivities(props).map((activity: any) => {
     return (
       <ActivityCard
@@ -80,23 +59,23 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
       <div className="add-new">
         <div className="bored-container">
           <h3>ARE YOU BORED? DO THIS!</h3>
-          <button onClick={newActivity}>
+          <button onClick={props.newActivity}>
             <FontAwesomeIcon icon={faSyncAlt} />
           </button>
         </div>
         <div className="bored-info">
           <div className="bored-desc">
             <p className="first-p">Activity: </p>
-            <p className="second-p"> {bored.activity}</p>
+            <p className="second-p"> {props.bored?.activity}</p>
           </div>
           <div className="bored-footer">
             <div className="bored-desc">
               <p className="first-p">Category: </p>
-              <p className="second-p">{bored.type}</p>
+              <p className="second-p">{props.bored?.type}</p>
             </div>
             <div className="bored-desc">
               <p className="first-p">Participants: </p>
-              <p className="second-p">{bored.participants}</p>
+              <p className="second-p">{props.bored?.participants}</p>
             </div>
           </div>
         </div>
