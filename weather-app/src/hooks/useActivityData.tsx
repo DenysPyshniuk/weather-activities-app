@@ -7,15 +7,16 @@ export default function useActivityData () {
   const [visual, setVisual] = useState<string>('Show');
   const [bored, setBored] = useState<iBored>();
 
-  // GET Random activity from API
   useEffect(() => {
-    axios
-      .get<iBored>("http://www.boredapi.com/api/activity/")
-      .then((res) => {
-        setBored(res.data);
-      })
-      .catch((e) => console.log(e));
-  }, []);
+    Promise.all([
+      axios.get<iBored>("http://www.boredapi.com/api/activity/"),
+      axios.get<ActivitiesArr>('http://localhost:8001/api/activities')
+    ]).then(([random, db]) => {
+      console.log('random', random)
+      setBored(random.data)
+      setEvent(db.data)
+    }).catch(e => console.log(e))
+  }, [])
 
   // fetch NEW random activity from API once button is hit
   function newActivity() {
@@ -23,14 +24,6 @@ export default function useActivityData () {
       setBored(res.data);
     });
   };
-
-  // GET ALL activities from db
-  useEffect(() => {
-    axios.get<ActivitiesArr>('http://localhost:8001/api/activities')
-      .then(res => {
-      setEvent(res.data)
-     }).catch(e => console.log(e))
-  }, []);
 
   return {
     event,

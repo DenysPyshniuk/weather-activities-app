@@ -122,3 +122,7 @@ interface DayWeatherProps<T> {
 interface Search {
   key: string
 }
+
+interface Axios {
+  data: {}
+}
