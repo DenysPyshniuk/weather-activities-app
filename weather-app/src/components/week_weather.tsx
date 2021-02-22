@@ -1,3 +1,4 @@
+import "../main.css";
 import "./week_weather.css";
 
 interface WeekWeatherProps extends WeatherProps<WeekWeather> {}
@@ -30,11 +31,10 @@ const WeekWeather: React.FC<WeekWeatherProps> = (props) => {
         </div>
         <br />
         <img
-          className="city-icon"
+          className="condition"
           src={`https://openweathermap.org/img/wn/${oneDayWeather.weather[0].icon}@2x.png`}
           alt={weather ? oneDayWeather.weather[0].description : "-"}
         />
-        {/* <p id="weather-description">{oneDayWeather.weather[0].description}</p> */}
       </div>
     );
   });

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./activities.css";
+import "../../main.css";
 import ActivityCard from "./activity_card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faSyncAlt } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faSyncAlt } from "@fortawesome/free-solid-svg-icons";
 
 interface DayWeatherProps<T> {
   event?: ActivitiesArr;
@@ -70,15 +71,17 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
       <div className="activities">
         <div className="activities-header">
           <p className="activities-title">Activity Suggestions...</p>
-          <button onClick={() => props.setVisual("New")}><FontAwesomeIcon icon={faPlus} /></button>
+          <button onClick={() => props.setVisual("New")}>
+            <FontAwesomeIcon icon={faPlus} />
+          </button>
         </div>
         <ul className="events">{singleEvent}</ul>
       </div>
       <div className="add-new">
         <div className="bored-container">
           <h3>ARE YOU BORED? DO THIS!</h3>
-          <button  onClick={newActivity}>
-          <FontAwesomeIcon icon={faSyncAlt}/>
+          <button onClick={newActivity}>
+            <FontAwesomeIcon icon={faSyncAlt} />
           </button>
         </div>
         <div className="bored-info">

@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import axios from "axios";
+import "../main.css";
 import "./day_weather.css";
 
 interface DayWeatherProps extends WeatherProps<DayWeather> {
@@ -20,7 +21,7 @@ const DayWeather: React.FC<DayWeatherProps> = (props) => {
       })
         .then((res) => {
           setWeather(res.data.day);
-          setWeekWeather(res.data.week)
+          setWeekWeather(res.data.week);
         })
         .catch((e) => console.log(e));
       setQuery("");
@@ -29,7 +30,6 @@ const DayWeather: React.FC<DayWeatherProps> = (props) => {
 
   return (
     <div className="main-container">
-      {/* <div id="search"> */}
       <input
         type="text"
         className="search"
@@ -38,30 +38,28 @@ const DayWeather: React.FC<DayWeatherProps> = (props) => {
         onChange={(e) => setQuery(e.target.value)}
         onKeyPress={search}
       />
-      {/* </div> */}
       {weather && (
         <div className="city">
           <h2 className="city-name">
             <span>{weather ? weather.name : "-"}</span>
-            <sup>{weather ? weather.sys.country : "-"}</sup>
+            <sup className="country">{weather ? weather.sys.country : "-"}</sup>
           </h2>
-          {/* <div> */}
           <div>
             <pre id="weather-temp">
               Max {weather ? Math.round(weather.main.temp_max) : "-"}
-              <sup>&deg;C</sup> Min{" "}
+              <sup className="deg">&deg;C</sup> Min{" "}
               {weather ? Math.round(weather.main.temp_min) : "-"}
-              <sup>&deg;C</sup>
+              <sup className="deg">&deg;C</sup>
             </pre>
           </div>
           <div className="parent_div">
             <div className="city-temp">
               {weather ? Math.round(weather.main.temp) : "-"}
-              <sup>&deg;C</sup>
+              <sup className="deg">&deg;C</sup>
             </div>
             <div className="info">
               <img
-                className="city-icon"
+                className="condition-icon"
                 src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
                 alt={weather ? weather.weather[0].description : "-"}
               />
@@ -77,7 +75,6 @@ const DayWeather: React.FC<DayWeatherProps> = (props) => {
             </pre>
           </div>
         </div>
-        // </div>
       )}
     </div>
   );
