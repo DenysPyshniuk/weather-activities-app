@@ -15,7 +15,6 @@ const Main: React.FC = () => {
     visual, 
     setVisual,
     bored,
-    setBored,
     newActivity  
   } = useActivityData();
 
