@@ -9,10 +9,10 @@ interface iBored {
 }
 
 interface Form {
-  weather?: DayWeather
-  value?: any
-  setEvent: setEvent
-  setVisual: setVisial
+  weather?: DayWeather;
+  value?: any;
+  setEvent: setEvent;
+  setVisual: setVisial;
 }
 
 //handle activity db requests
@@ -99,10 +99,9 @@ interface Quote {
 }
 
 interface NewActivity {
-  activity_type?: any
-  activity_name?: string
-  activity_description?: string
-  hi_temp?: number
-  low_temp?: number
+  activity_type?: any;
+  activity_name?: string;
+  activity_description?: string;
+  hi_temp?: number;
+  low_temp?: number;
 }
-// declare module "*.png";
