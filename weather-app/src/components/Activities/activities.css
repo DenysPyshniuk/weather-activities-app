@@ -8,8 +8,8 @@
 }
 
 .activities-header button {
-  background: #f5f4e8c4;
-  border: 3px ridge rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 30%;
   padding: 0.3em 0.5em;
 }
@@ -43,12 +43,12 @@
   display: inline-block;
   width: 80%;
   height: 9em;
-  border: 4px outset rgba(255, 255, 255, 0.5);
+  border: 3px outset rgba(255, 255, 255, 0.2);
   box-shadow: 0px 0px 7px 1px rgba(15, 15, 15, 0.404);
   border-radius: 20px;
   margin: 0.5em;
   padding: 1em;
-  background-color: #f5f4e8c4;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 .event-card p {
@@ -98,7 +98,7 @@
   width: auto;
   height: 120vh;
   padding: 1em;
-  background: #f5f4e8c4;
+  background: rgba(255, 255, 255, 0.4);
   padding: 0.5em;
   padding-right: 1.4em;
   border-radius: 20px;
@@ -143,8 +143,7 @@
   outline: none;
   background: none;
   background: #f5f4e8c4;
-  border: 3px ridge rgba(255, 255, 255, 0.5);
-  /* border: 3px ridge rgba(212, 173, 179, 0.85); */
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 30%;
   padding: 0.3em 0.5em;
 }
@@ -181,8 +180,8 @@
   padding: 1.5em;
   margin: 0 1em;
   font-size: small;
-  background-color: #f5f4e8c4;
-  border: 3px ridge rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 3px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   height: 120px;
 }
@@ -200,9 +199,8 @@
 .bored-container button {
   border: none;
   outline: none;
-
   background: #f5f4e8c4;
-  border: 3px ridge rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 30%;
   padding: 0.5em;
 }
