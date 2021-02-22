@@ -9,10 +9,10 @@ interface iBored {
 }
 
 interface Form {
-  weather: any
+  weather?: DayWeather
   value?: any
-  setEvent: any
-  setVisual: any
+  setEvent: setEvent
+  setVisual: setVisial
 }
 
 //handle activity db requests
@@ -90,7 +90,7 @@ interface WeekWeather {
 
 interface WeatherProps<T> {
   weather?: T;
-  setWeather: (weather: T) => void;
+  setWeather: setWeather;
 }
 
 interface Quote {

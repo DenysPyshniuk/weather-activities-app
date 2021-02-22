@@ -6,7 +6,7 @@ import { faPlus, faSyncAlt } from '@fortawesome/free-solid-svg-icons'
 interface DayWeatherProps<T> {
   event?: ActivitiesArr;
   weather?: T;
-  setVisual?: any;
+  setVisual?: any
   bored?: iBored
   newActivity?: () => void;
 }

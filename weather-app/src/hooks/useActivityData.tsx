@@ -38,7 +38,6 @@ export default function useActivityData () {
     visual,
     setVisual,
     bored,
-    setBored,
     newActivity
   };
 

@@ -32,8 +32,8 @@ const Form: React.FC<Form> = (props) => {
       setEvent({
         ...event,
         activity_type: '',
-        hi_temp: Math.round(Number(props.weather.main.temp)),
-        low_temp: Math.round(Number(props.weather.main.temp)),
+        hi_temp: 0,
+        low_temp: 0,
         activity_name: '',
         activity_description: '',
       })
