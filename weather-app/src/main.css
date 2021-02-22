@@ -1,3 +1,13 @@
+.week-container,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 #root {
   display: flex;
   flex-direction: column;
@@ -64,8 +74,17 @@ p {
 }
 
 @media only screen and (max-width: 1024px) {
+  .logo {
+    width: 9rem !important;
+    height: 3rem !important;
+  }
+
   .container-quote {
     box-shadow: none !important;
+  }
+
+  .container-quote-text {
+    height: fit-content !important;
   }
 
   .main-group {
@@ -80,6 +99,8 @@ p {
     margin-bottom: 0%;
     margin-left: 5%;
     background: none;
+    padding: unset;
+    box-shadow: none;
   }
 
   .week-container {
@@ -93,10 +114,45 @@ p {
 
   .right-group {
     width: 90%;
-    margin-top: 0;
+    margin-top: 1.5rem;
     margin-right: 5%;
     margin-bottom: 5%;
     margin-left: 5%;
+    padding: unset;
+    box-shadow: none;
+  }
+
+  .events {
+    display: flex;
+    flex-direction: column;
+    font-size: 1em;
+    align-self: center;
+    overflow-y: unset;
+  }
+
+  ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+
+  .activity-list {
+    list-style-type: none;
+    margin: 0;
+    align-self: center;
+    padding: unset;
+  }
+
+  .event-card {
+    width: fit-content !important;
+    height: fit-content !important;
+  }
+
+  .add-new {
+    width: 88%;
   }
 
   .main-container {
@@ -108,11 +164,66 @@ p {
 
   .search {
     font-size: small !important;
-    margin-right: 15% !important;
-    margin-left: 15% !important;
+    margin-right: 0% !important;
+    margin-left: 0% !important;
+    margin-top: 0% !important;
   }
 
   .events {
     max-height: 100% !important;
+  }
+}
+
+@media only screen and (max-width: 560px) {
+  .container-quote-text {
+    height: fit-content !important;
+    background-color: unset !important;
+    border: none !important;
+  }
+
+  .container-quote {
+    height: fit-content !important;
+    margin: auto;
+  }
+
+  .city {
+    font-size: xx-small !important;
+  }
+
+  #weather-temp {
+    font-size: large !important;
+    font-weight: lighter !important;
+  }
+
+  .city-temp {
+    font-size: xxx-large !important;
+    margin: 1rem !important;
+  }
+
+  .condition-icon {
+    width: 3rem !important;
+    margin-top: 0px !important;
+  }
+
+  #feels {
+    margin-top: -2rem !important;
+    font-size: large !important;
+  }
+
+  .condition {
+    margin-top: -2rem !important;
+    margin-bottom: -1rem !important;
+  }
+}
+
+@media only screen and (max-width: 409px) {
+  .logo {
+    width: 8rem !important;
+    height: 2.5rem !important;
+  }
+
+  .container-quote {
+    height: fit-content !important;
+    margin: auto;
   }
 }
