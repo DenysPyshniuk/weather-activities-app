@@ -3,8 +3,6 @@ const requester = require('request')
 
 const fixQuery = require('../helpers/query')
 
-// import fetchCurrentWeather from '../helpers/fetchCurrentWeather'
-
 module.exports = id => {
   router.post('/dayweather', (request, response) => {
     const url = "http://api.openweathermap.org/data/2.5/"

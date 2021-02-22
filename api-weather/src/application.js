@@ -1,9 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 
-// import axios from 'axios'
-// import fetchCurrentWeather from "./helpers/fetchCurrentWeather";
-// const fetchCurrentWeather = require('./helpers')
 const ENV = 'development'
 
 

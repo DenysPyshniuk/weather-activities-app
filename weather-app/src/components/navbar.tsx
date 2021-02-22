@@ -1,4 +1,3 @@
-import { getDefaultSettings } from "http2";
 import "./navbar.css";
 import logo from "../docs/meteorol-OG.png";
 
