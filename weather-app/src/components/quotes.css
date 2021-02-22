@@ -36,7 +36,7 @@
   color: black;
   background-color: #f5f4e8c4;
   display: inline-block;
-  border: 3px ridge rgba(255,255,255,.5);
+  border: 2px ridge rgba(255,255,255,.5);
   padding: 0 2px;
 }
 .container-quote {
