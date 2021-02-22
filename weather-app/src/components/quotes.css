@@ -1,26 +1,12 @@
-.quote {
+.container-quote {
+  padding: 0.5rem;
+  border-radius: 10px;
+  height: 5rem;
+  margin: 0 2em;
+}
+
+.quote-header {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  height: 4rem;
-  padding: 1em;
-  font-family: "Architects Daughter";
-  font-weight: 800;
-}
-
-.quotes-title {
-  position: absolute;
-  left: 6rem;
-  top: 10px;
-  margin: 0.3rem 0rem;
-  font-weight: bolder;
-}
-
-.new-quote {
-  /* position: absolute; */
-  right: 6rem;
-  top: 20px;
 }
 
 .container-quote-text {
@@ -35,31 +21,16 @@
   border: 2px solid rgba(212, 173, 179, 0.85);
   border-radius: 10px;
 }
-.container-quote-author {
-  font-size: medium;
-  margin: 0.1rem;
-  text-align: center;
-  color: black;
-  /* text-shadow: 1px 1px white; */
-}
-.container-quote {
-  padding: 0.5rem;
-  border-radius: 10px;
-  height: 70px;
-  margin: 0 2em;
-  
-}
-.quote-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
+
 .new-quote {
-  border: none;
-  outline: none;
   background: white;
   border: 3px ridge rgba(212, 173, 179, 0.85);
   border-radius: 30%;
   padding: 0.5em;
   max-height: 32px;
+}
+
+.container-quote-author {
+  margin: 0.1rem;
+  text-align: center;
 }

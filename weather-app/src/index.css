@@ -3,18 +3,23 @@
 
 html,
 body {
-  margin: 0 !important;
-  padding: 0 !important;
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
   font-family: "Arimo", "Architects Daughter";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
 
+/* --------------------      CONDITION-CLASSES     -----------------  */
 .Any-condition {
   background-image: linear-gradient(
     to bottom right,
-    rgb(133, 52, 15),
+    rgb(63, 35, 21),
     rgb(250, 250, 238)
   );
   min-height: 100vh;
@@ -54,9 +59,4 @@ body {
     rgb(255, 255, 253)
   );
   min-height: 100vh;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }

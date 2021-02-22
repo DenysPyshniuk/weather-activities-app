@@ -1,45 +1,41 @@
-/* Activity List */
 .activities {
   padding: 0.5rem;
 }
 .activities-header {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   padding: 0 1.5em;
 }
+
 .activities-header button {
-  border: none;
-  outline: none;
-  background: none;
-  background: white;  
+  background: white;
   border: 3px ridge rgba(212, 173, 179, 0.85);
   border-radius: 30%;
   padding: 0.3em 0.5em;
 }
+
 .events {
-  display: flex;
-  flex-direction: column;
-  font-size: 1em;
-  /* height: 90%; */
   padding-left: 0;
   max-height: 31.5rem;
   overflow-y: scroll;
 }
-
+/* -------------           SCROLL BAR             -------------*/
 .events::-webkit-scrollbar {
-  width: 1em;
+  width: 0.5em;
 }
 
 .events::-webkit-scrollbar-thumb {
   background-color: #f5f4e8c4;
-  /* outline: 1px solid rgb(186, 187, 189); */
   border-radius: 7px;
+}
+/* ------------------------------------------------------------- */
+
+.activity-list {
+  list-style-type: none;
 }
 
 .event-card {
   display: inline-block;
-  flex-direction: row;
   width: 80%;
   height: 9em;
   border: 4px outset rgba(212, 173, 179, 0.85);
@@ -48,27 +44,22 @@
   margin: 0.5em;
   padding: 1em;
   background-color: #f5f4e8c4;
-  align-content: space-between;
 }
+
 .event-card p {
   font-size: smaller;
   text-transform: none;
 }
-.activity-list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
+
 .card-header {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
   justify-content: space-between;
   font-weight: bolder;
   font-size: large;
   padding-bottom: 2px;
   height: 20%;
 }
+
 .card-description {
   height: 60%;
   padding: 2px 0;
@@ -76,13 +67,13 @@
 }
 .card-footer {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   font-size: x-small;
   align-items: flex-end;
   align-content: flex-end;
   height: 20%;
 }
+
 .activities-title {
   align-items: flex-end;
   font-size: large;
@@ -90,11 +81,12 @@
   font-style: italic;
   text-shadow: 1px 1px rgba(212, 173, 179, 0.85);
 }
+
 .activity-list p {
   margin: 0;
 }
 
-/* Form Edits */
+/* ------------             Form Edits         ------------------ */
 
 .activity-form {
   width: auto;
@@ -144,7 +136,7 @@
   border: none;
   outline: none;
   background: none;
-  background: white;  
+  background: white;
   border: 3px ridge black;
   /* border: 3px ridge rgba(212, 173, 179, 0.85); */
   border-radius: 30%;
@@ -157,7 +149,7 @@
   border-radius: 50%;
 }
 
-/* Random Activity Generator */
+/*-------------      Random Activity Generator       ---------- */
 .bored-container {
   display: flex;
   flex-direction: row;
@@ -198,16 +190,8 @@
 .bored-container button {
   border: none;
   outline: none;
-  background: white;  
+  background: white;
   border: 3px ridge rgba(212, 173, 179, 0.85);
   border-radius: 30%;
   padding: 0.5em;
 }
-
-/* button {
-  border-radius: 8px;
-  outline: none;
-}
-button:hover {
-  background-color: rgba(144, 188, 245, 0.85);
-} */

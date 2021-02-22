@@ -1,32 +1,14 @@
 .navbar {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0rem 0rem;
-  width: 100%;
   height: 6rem;
-  overflow: hidden;
-}
-.nav-right {
-  display: flex;
-  width: 30%;
-  align-items: center;
-  justify-content: flex-end;
-}
-.menu {
-  height: 1.5em;
-  width: 1.5em;
-  margin-right: 1em;
 }
 
 .logo {
   margin-left: 2rem;
   width: 23rem;
   height: 5rem;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 #todays-date {

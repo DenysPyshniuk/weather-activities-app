@@ -17,35 +17,16 @@
 .city {
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   padding-top: 2px;
-  border-radius: 20px;
-}
-
-.country {
-  font-size: 0.5em;
-}
-
-.deg {
-  font-size: 0.5em;
-}
-
-.condition-icon {
-  width: 6rem;
-  margin-top: -10px;
 }
 
 .city-name {
   font-size: 2em;
 }
 
-.city-name sup {
-  padding: 0.2em 0.6em;
-  margin-left: 0.2em;
-  border-radius: 30px;
-  color: #fff;
-  background: #ff8c00;
+.country {
+  font-size: 0.5em;
 }
 
 #weather-temp {
@@ -80,6 +61,23 @@
   text-align: center;
   font-weight: bolder;
   align-items: center;
+}
+
+.deg {
+  font-size: 0.5em;
+}
+
+.condition-icon {
+  width: 6rem;
+  margin-top: -10px;
+}
+
+.city-name sup {
+  padding: 0.2em 0.6em;
+  margin-left: 0.5em;
+  border-radius: 30px;
+  color: #fff;
+  background: #ff8c00;
 }
 
 #feels {
