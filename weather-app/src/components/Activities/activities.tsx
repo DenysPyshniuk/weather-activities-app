@@ -12,7 +12,7 @@ interface DayWeatherProps<T> {
 }
 
 const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
-  
+  //Filter activites by MAIN weather type && hi/low temperature
   const filterActivities = (props: any) => {
     const weatherStatus = props.weather?.weather[0].main;
     const temp = props.weather?.main.temp;
@@ -25,8 +25,10 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
     );
   };
 
+  // Capture current weather state for icon on all cards
   const weatherIcon = props.weather?.weather[0].icon;
-
+  
+  // Create a new array of filtered activities
   const singleEvent = filterActivities(props).map((activity: any) => {
     return (
       <ActivityCard
