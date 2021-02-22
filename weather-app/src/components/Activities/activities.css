@@ -85,6 +85,10 @@
 }
 .activities-title {
   align-items: flex-end;
+  font-size: large;
+  font-weight: bold;
+  font-style: italic;
+  text-shadow: 1px 1px rgba(212, 173, 179, 0.85);
 }
 .activity-list p {
   margin: 0;
@@ -141,7 +145,8 @@
   outline: none;
   background: none;
   background: white;  
-  border: 3px ridge rgba(212, 173, 179, 0.85);
+  border: 3px ridge black;
+  /* border: 3px ridge rgba(212, 173, 179, 0.85); */
   border-radius: 30%;
   padding: 0.3em 0.5em;
 }
