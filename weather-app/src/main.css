@@ -172,6 +172,11 @@ p {
     border: none !important;
   }
 
+  .container-quote-author {
+    background-color: unset !important;
+    border: none !important;
+  }
+
   .container-quote {
     height: fit-content !important;
     margin: auto;
