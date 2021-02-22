@@ -1,13 +1,14 @@
 import "./activities.css";
+import "../../main.css";
 import ActivityCard from "./activity_card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus, faSyncAlt } from '@fortawesome/free-solid-svg-icons'
+import { faPlus, faSyncAlt } from "@fortawesome/free-solid-svg-icons";
 
 interface DayWeatherProps<T> {
   event?: ActivitiesArr;
   weather?: T;
-  setVisual?: any
-  bored?: iBored
+  setVisual?: any;
+  bored?: iBored;
   newActivity?: () => void;
 }
 
@@ -27,7 +28,7 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
 
   // Capture current weather state for icon on all cards
   const weatherIcon = props.weather?.weather[0].icon;
-  
+
   // Create a new array of filtered activities
   const singleEvent = filterActivities(props).map((activity: any) => {
     return (
@@ -58,8 +59,8 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
       <div className="add-new">
         <div className="bored-container">
           <h3>ARE YOU BORED? DO THIS!</h3>
-          <button  onClick={props.newActivity}>
-            <FontAwesomeIcon icon={faSyncAlt}/>
+          <button onClick={props.newActivity}>
+            <FontAwesomeIcon icon={faSyncAlt} />
           </button>
         </div>
         <div className="bored-info">
