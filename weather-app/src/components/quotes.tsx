@@ -11,7 +11,6 @@ const Quotes = () => {
   if (quote && !quote[count]) {
     setCount(Math.floor(Math.random() * quote.length - 1));
   }
-  console.log(quote ? quote[count] : '')
   useEffect(() => {
     axios
       .get("http://localhost:8001/api/quotes")
