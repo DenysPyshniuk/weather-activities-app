@@ -1,22 +1,42 @@
-# weather-activities-app
-Weather app with quotes and weather related activities 
+# Meteorol-OG ☄️
 
-# access our postgres local host linux
-sudo -i -u postgres
+**Meteorol-OG** is a single page full-stack application that provides local weather, activity suggestions and a random quote of the day.
 
-psql
+Tech Stack: React/Typescript, Node/Express, PostgreSQL, Axios, CSS.
 
-\c (the db)
+Contributors: [Zainen Suzuki](https://github.com/zainen), [Denys Pyshniuk](https://github.com/DenysPyshniuk), [Clarence Williams](https://github.com/c1ar3nc3)
 
-# openweathermap api get request json 
-http://api.openweathermap.org/data/2.5/weather?q=Vancouver&units=metric&appid=a9af9e3ca381e75b9ef809c0a4263fe6
+---
 
+## Screenshots 📸
 
-# weather api (currently not working)
+---
 
-https://api.weatherapi.com/v1/current.json?key=6935fa4c8a364530a5d04857211302&q=Vancouver
+## Features 
++ A user can see detailed weather information for the day.
++ A user can view a different theme depending on the current weather condition.
++ A user can see a 7-day forecast with the condition plus the temperature hi/low.
++ A user can search different cities for daily/weekly weather information.
++ A user can find activities that are tailored to the current weather conditions in that location.
++ A user can add activities to the activity suggestions list.
++ A user can use the Random activity generator to create an activity.
++ A user can view a random quote from our database & regenerate a new quote.
+---
 
-# if port already in use
-lsof -w -n -i tcp: (port-number)
-
-kill -9 (PID)
+#### Dependencies
++  "@fortawesome/fontawesome-svg-core": "^1.2.34"
++  "@fortawesome/free-solid-svg-icons": "^5.15.2"
++  "@fortawesome/react-fontawesome": "^0.1.14"
++  "@types/node": "^12.19.16"
++  "@types/react": "^17.0.1"
++  "@types/react-dom": "^17.0.0"
++  "@types/react-router-dom": "^5.1.7"
++  "axios": "^0.21.1"
++  "express": "^4.17.1"
++  "pg": "^8.5.1"
++  "react": "^17.0.1"
++  "react-dom": "^17.0.1"
++  "react-router-dom": "^5.2.0"
++  "react-scripts": "4.0.2"
++  "typescript": "^4.1.5"
++  "web-vitals": "^1.1.0"
