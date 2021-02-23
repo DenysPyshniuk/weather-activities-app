@@ -7,7 +7,6 @@ module.exports = id => {
   router.post('/dayweather', (request, response) => {
     const url = "http://api.openweathermap.org/data/2.5/"
     const vet = fixQuery(request.body.query)
-    console.log(`${vet}`)
     const dayUrl = url + 'weather?q=' + vet + '&units=metric&appid=' + id
     const weather = {}
     
