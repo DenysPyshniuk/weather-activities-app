@@ -29,15 +29,13 @@ const Quotes = () => {
         <h4 className="container-quote-text">
           " {quote ? quote[count].text : "-"} "
         </h4>
+        <h4 className="container-quote-author">
+          - {quote ? quote[count].author : "-"}
+        </h4>
         <button className="new-quote" onClick={() => setCount((count += 1))}>
           {" "}
           <FontAwesomeIcon icon={faSyncAlt} />{" "}
         </button>
-      </div>
-      <div className="quote-footer">
-        <h4 className="container-quote-author">
-          - {quote ? quote[count].author : "-"}
-        </h4>
       </div>
     </div>
   );
