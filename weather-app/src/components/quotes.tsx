@@ -7,10 +7,11 @@ import { faSyncAlt } from "@fortawesome/free-solid-svg-icons";
 
 const Quotes = () => {
   const [quote, setQuote] = useState<Quote[]>();
-  let [count, setCount] = useState(Math.floor(Math.random() * 1643));
+  let [count, setCount] = useState(Math.floor(Math.random() * (quote ? quote.length - 1 : 100)));
   if (quote && !quote[count]) {
-    setCount(Math.floor(Math.random() * 1643));
+    setCount(Math.floor(Math.random() * quote.length - 1));
   }
+  console.log(quote ? quote[count] : '')
   useEffect(() => {
     axios
       .get("http://localhost:8001/api/quotes")
@@ -20,17 +21,17 @@ const Quotes = () => {
       .catch((e) => console.log(e));
   }, []);
 
-  if (quote && quote[count].author === null) {
+  if (quote && quote[count] && !quote[count].author) {
     quote[count].author = "Anonymous";
   }
   return (
     <div className="container-quote">
       <div className="quote-header">
         <h4 className="container-quote-text">
-          " {quote ? quote[count].text : "-"} "
+          " {quote && quote[count] ? quote[count].text : "-"} "
         </h4>
         <h4 className="container-quote-author">
-          - {quote ? quote[count].author : "-"}
+          - {quote && quote[count] ? quote[count].author : "-"}
         </h4>
         <button className="new-quote" onClick={() => setCount((count += 1))}>
           {" "}
