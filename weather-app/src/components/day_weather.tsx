@@ -36,9 +36,10 @@ const DayWeather: React.FC<DayWeatherProps> = (props) => {
         type="text"
         className="search"
         placeholder="Search...       Vancouver,ca"
+        value={query}
         onChange={(e) => setQuery(e.target.value)}
         onKeyPress={search}
-      />
+        />
       {weather && (
         <div className="city">
           <h2 className="city-name">
