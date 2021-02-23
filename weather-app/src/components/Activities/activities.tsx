@@ -51,7 +51,7 @@ const Activities: React.FC<DayWeatherProps<DayWeather>> = (props) => {
       </div>
       <div className="add-new">
         <div className="bored-container">
-          <h3>ARE YOU BORED? DO THIS!</h3>
+          <h3>Random Activity Generator</h3>
           <button onClick={props.newActivity}>
             <FontAwesomeIcon icon={faSyncAlt} />
           </button>

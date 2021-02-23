@@ -1,5 +1,5 @@
 .activities {
-  padding: 0.5rem;
+  padding: 1em;
 }
 .activities-header {
   display: flex;
@@ -12,6 +12,7 @@
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 30%;
   padding: 0.3em 0.5em;
+  max-height: 2em;
 }
 
 .activities-header button:hover {
@@ -23,6 +24,7 @@
   padding-left: 0;
   max-height: 31.5rem;
   overflow-y: scroll;
+  
 }
 /* -------------           SCROLL BAR             -------------*/
 .events::-webkit-scrollbar {
@@ -37,12 +39,13 @@
 
 .activity-list {
   list-style-type: none;
+  padding-left: 20px;
 }
 
 .event-card {
   display: inline-block;
   width: 80%;
-  height: 9em;
+  height: 10em;
   border: 3px outset rgba(255, 255, 255, 0.2);
   box-shadow: 0px 0px 7px 1px rgba(15, 15, 15, 0.404);
   border-radius: 20px;
@@ -52,7 +55,6 @@
 }
 
 .event-card p {
-  font-size: smaller;
   text-transform: none;
 }
 
@@ -81,11 +83,12 @@
 
 .activities-title {
   align-items: flex-end;
-  font-size: large;
+  font-size: 1.5em;
   font-weight: bold;
   font-style: italic;
   color: Black;
   text-shadow: 1px 1px powderblue;
+  padding-top: 5px;
 }
 
 .activity-list p {
@@ -99,8 +102,7 @@
   height: 120vh;
   padding: 1em;
   background: rgba(255, 255, 255, 0.4);
-  padding: 0.5em;
-  padding-right: 1.4em;
+  padding: 1.5em;
   border-radius: 20px;
 }
 .form-header {
@@ -145,7 +147,10 @@
   background: #f5f4e8c4;
   border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 30%;
-  padding: 0.3em 0.5em;
+  padding: 0.5em;
+  position: relative;
+  top: -5px;
+  right: 6px;
 }
 .activity-form button:hover {
   background-color: white;
@@ -169,15 +174,17 @@
 
 .first-p {
   font-weight: 800;
+  padding-bottom: 3px;
+  font-size: 1em;
+}
+.second-p {
+  font-size: small;
 }
 
-.second-p {
-  font-style: oblique;
-}
 .add-new {
   display: flex;
   flex-direction: column;
-  padding: 1.5em;
+  padding: 0.5em 1.5em;
   margin: 0 1em;
   font-size: small;
   background-color: rgba(255, 255, 255, 0.4);
@@ -185,16 +192,20 @@
   border-radius: 20px;
   height: 120px;
 }
+.add-new h3 {
+  font-size: 1.2em;
+}
 .bored-info {
   display: flex;
   flex-direction: column;
-  align-content: space-between;
+  height: 65px;
 }
 .bored-footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 1em;
+  position: relative;
+  top: 15px;
 }
 .bored-container button {
   border: none;
