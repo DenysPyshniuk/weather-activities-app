@@ -64,19 +64,6 @@ p {
 
 /*----------------------     MEDIA QUERIES    ---------------------*/
 @media only screen and (max-width: 1024px) {
-  .logo {
-    width: 9rem !important;
-    height: 3rem !important;
-  }
-
-  .container-quote {
-    box-shadow: none !important;
-  }
-
-  .container-quote-text {
-    height: fit-content !important;
-  }
-
   .main-group {
     flex-direction: column;
     justify-content: center;
@@ -111,40 +98,7 @@ p {
     padding: unset;
     box-shadow: none;
   }
-
-  .events {
-    display: flex;
-    flex-direction: column;
-    font-size: 1em;
-    align-self: center;
-    overflow-y: unset;
-  }
-
-  ul {
-    display: block;
-    list-style-type: disc;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-  }
-
-  .activity-list {
-    list-style-type: none;
-    margin: 0;
-    align-self: center;
-    padding: unset;
-  }
-
-  .event-card {
-    width: fit-content !important;
-    height: fit-content !important;
-  }
-
-  .add-new {
-    width: 88%;
-  }
-
+  
   .main-container {
     display: flex;
     flex-direction: column;
@@ -159,28 +113,9 @@ p {
     margin-top: 0% !important;
   }
 
-  .events {
-    max-height: 100% !important;
-  }
 }
 
 @media only screen and (max-width: 560px) {
-  .container-quote-text {
-    height: fit-content !important;
-    background-color: unset !important;
-    border: none !important;
-  }
-
-  .container-quote-author {
-    background-color: unset !important;
-    border: none !important;
-  }
-
-  .container-quote {
-    height: fit-content !important;
-    margin: auto;
-  }
-
   .left-group {
     min-height: 65vh !important;
   }
@@ -212,6 +147,9 @@ p {
   .condition {
     margin-top: -2rem !important;
     margin-bottom: -1rem !important;
+  }
+  #todays-date {
+    margin: 0;
   }
 }
 
