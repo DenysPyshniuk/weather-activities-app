@@ -7,6 +7,11 @@
   padding: 0 1.5em;
 }
 
+select.form-control {
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+}
+
 .activities-header button {
   background: rgba(255, 255, 255, 0.4);
   border: 2px solid rgba(255, 255, 255, 0.2);
@@ -24,7 +29,6 @@
   padding-left: 0;
   max-height: 31.5rem;
   overflow-y: scroll;
-  
 }
 /* -------------           SCROLL BAR             -------------*/
 .events::-webkit-scrollbar {
@@ -298,5 +302,4 @@
   .card-header {
     font-size: medium;
   }
-
 }
