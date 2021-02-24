@@ -64,6 +64,7 @@ p {
 
 /*----------------------     MEDIA QUERIES    ---------------------*/
 @media only screen and (max-width: 1024px) {
+
   .main-group {
     flex-direction: column;
     justify-content: center;
@@ -115,7 +116,7 @@ p {
 
 }
 
-@media only screen and (max-width: 560px) {
+/* @media only screen and (max-width: 560px) {
   .left-group {
     min-height: 65vh !important;
   }
@@ -163,4 +164,4 @@ p {
     height: fit-content !important;
     margin: auto;
   }
-}
+} */

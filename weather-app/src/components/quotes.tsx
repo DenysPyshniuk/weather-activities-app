@@ -33,9 +33,8 @@ const Quotes = () => {
           - {quote && quote[count] ? quote[count].author : "-"}
         </h4>
         <button className="new-quote" onClick={() => setCount((count += 1))}>
-          {" "}
-          <FontAwesomeIcon icon={faSyncAlt} />{" "}
-        </button>
+            {" "}<FontAwesomeIcon icon={faSyncAlt} />{" "}
+          </button>
       </div>
     </div>
   );

@@ -2,16 +2,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 5rem;
+  height: 5em;
 }
 
 .logo {
   margin-left: 2rem;
-  width: 23rem;
-  height: 5rem;
+  height: 4em;
+  padding-top: 10px;
 }
 
 #todays-date {
   margin-right: 2rem;
   font-weight: bolder;
+}
+
+@media only screen and (max-width: 650px) {
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    height: 7em;
+  }
+  .logo {
+    margin: 0;
+    height: 5em;
+  }
 }

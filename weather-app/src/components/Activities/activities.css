@@ -246,23 +246,27 @@
     padding: unset;
   }
   .event-card {
-    margin-right: 20px;
+    margin-right: 30px;
     width: 90%;
   }
   .card-header {
-    font-size: x-large;
+    font-size: large;
   }
   .card-description {
-    font-size: x-large;
+    font-size: large;
+  }
+  .bored-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   .add-new {
     width: 90%;
     margin: auto;
     height: 180px;
-    font-size: x-large;
+    font-size: large;
   }
   .add-new p {
-    font-size: x-large;
+    font-size: large;
   }
 }
 
@@ -275,6 +279,24 @@
     font-size: large;
   }
   .add-new p {
-    font-size: large;
+    font-size: medium;
   }
+}
+
+@media only screen and (max-width: 480px) {
+  .add-new {
+    margin: auto;
+    padding: 0.5em;
+    font-size: medium;
+  }
+  .bored-container {
+    margin: 0;
+  }
+  .activities {
+    margin-right: 30px;
+  }
+  .card-header {
+    font-size: medium;
+  }
+
 }
