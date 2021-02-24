@@ -93,7 +93,7 @@ interface WeatherProps<T> {
 }
 
 interface Quote {
-  text: string;
+  quote: string;
   author: string;
 }
 

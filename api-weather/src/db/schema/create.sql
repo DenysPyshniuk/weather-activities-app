@@ -26,7 +26,6 @@ CREATE TABLE activities (
 
 
 CREATE TABLE quotes (
-  id SERIAL PRIMARY KEY NOT NULL,
   author VARCHAR(255),
   quote VARCHAR(255)
 );

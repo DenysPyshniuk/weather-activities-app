@@ -27,7 +27,7 @@ const Quotes = () => {
     <div className="container-quote">
       <div className="quote-header">
         <h4 className="container-quote-text">
-          " {quote && quote[count] ? quote[count].text : "-"} "
+          " {quote && quote[count] ? quote[count].quote : "-"} "
         </h4>
         <h4 className="container-quote-author">
           - {quote && quote[count] ? quote[count].author : "-"}
