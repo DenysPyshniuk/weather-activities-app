@@ -1,40 +1,35 @@
 .container-quote-text {
-  position:relative;
-  left:10vw;
   font-weight: 400;
-  margin: 0 20px;
+  margin: auto;
   font-style: italic;
   text-align: center;
   padding: 0.5em 1em;
   background-color: rgba(255, 255, 255, 0.3);
   height: 50px;
-  width: 70%;
+  width: 80%;
   border-radius: 10px;
 }
 .container-quote-author {
-  display: flex;
   position: relative;
-  top: 40px;
-  right: 10vw;
-  font-size: small;
-  text-align: left;
-  color: black;
-  border-radius: 5px;
+  bottom: 18px;
+  margin: 0;
+  text-align: center;
 }
 .container-quote {
+  display: flex;
+  flex-direction: column;
   padding: 0.5rem;
   border-radius: 10px;
   height: 70px;
   margin: 0 2em;
 }
 .quote-header {
-  display: flex;
-  flex-direction: row;
-  margin: auto;
-  justify-content: space-between;
+  width: 100%;
 }
-
 .new-quote {
+  position: absolute;
+  right: 45px;
+  top: 100px;
   border: none;
   outline: none;
   background: rgba(255, 255, 255, 0.3);
@@ -42,14 +37,7 @@
   border-radius: 30%;
   padding: 0.5em;
   max-height: 32px;
-  position: relative; 
-  top: 2vh;
-  right: 8.5vw;
-}
-
-.container-quote-author {
-  margin: 0.1rem;
-  text-align: center;
+  max-width: 32px;
 }
 
 .new-quote:hover {
@@ -58,39 +46,31 @@
 }
 
 
-@media only screen and (max-width: 1024px) {
-  .container-quote {
-    height: 90px;
-    box-shadow: none !important;
-  }
-  .quote-header {
-    height: 80px;
-  }
-  .container-quote-text {
-    height: 60px;
-  }
-  .container-quote-author {
-    position: relative;
-    top: 55px;
-    height: 20px;
-    width: 150px;
-    justify-content: center;
-    padding-top: 4px;
-  }
-}
-
 @media only screen and (max-width: 650px) {
   .container-quote {
-    height: 120px;
+    height: 140px;
+    width: auto;
+    margin: auto;
   }
   .quote-header {
     height: 120px;
+    width: 100%;
   }
   .container-quote-text {
     height: 100px;
+    margin: auto;
   }
-  .container-quote-author {
-    top: 95px;
+  .new-quote {
+    top: 85px;
     right: 70px;
   }
+  
+}
+
+@media only screen and (max-width: 480px) {
+ .quote-header {
+   height: 130px;
+ }
+
+
 }
