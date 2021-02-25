@@ -20,8 +20,7 @@ const WeekWeather: React.FC<WeekWeatherProps> = (props) => {
         <br />
         <div className="weather-temp">
           <p>
-            Day
-            {weather ? Math.round(oneDayWeather.temp.day) : "-"}
+            Day {weather ? Math.round(oneDayWeather.temp.day) : "-"}
             <sup>&deg;C</sup>
           </p>
           <p>
